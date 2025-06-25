@@ -1,5 +1,7 @@
 # 📍 Detailed Data Analyst Roadmap Tracker
 
+# Progress ( 🟢 = Completed, ⚪️ = Pending )
+
 ## Stage 1: Excel & Spreadsheets (Weeks 1–2)
 - 🟢 Basic Navigation: Ribbons, Cells, Ranges, Worksheets  
 - ⚪️ Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND  
