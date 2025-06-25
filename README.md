@@ -6,11 +6,11 @@ Track your journey from zero to job-ready as a Data Analyst.
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/YourUsername/data-analyst-roadmap-tracker.git
-   cd data-analyst-roadmap-tracker
+   git clone https://github.com/YourUsername/Data-Analyst-Roadmap-Tracker.git
+   cd Data-Analyst-Roadmap-Tracker
    ```
 2. Check off topics in `ROADMAP.md` as you complete them.
-3. (Optional) Sync your progress file:
+3. Sync your progress file:
    ```bash
    python update_progress.py "Stage 1" "Basic Navigation: Ribbons, Cells, Ranges, Worksheets"
    ```
