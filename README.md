@@ -6,7 +6,7 @@ Track your journey from zero to job-ready as a Data Analyst.
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/YourUsername/Data-Analyst-Roadmap-Tracker.git
+   git clone https://github.com/nurahmed12/Data-Analyst-Roadmap-Tracker.git
    cd Data-Analyst-Roadmap-Tracker
    ```
 2. Check off topics in `ROADMAP.md` as you complete them.
