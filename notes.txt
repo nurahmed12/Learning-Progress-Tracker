@@ -1,2 +1,6 @@
 Stage 1 : Excel & Spreadsheets (Week 1-2)
 - Basic Navigation: 
+Ribbons (The navigations on the top, can be hidden using Ctrl + F1)
+Cells (Where we insert data)
+Range (Selected cells area. e.g., A1:D1 (Horizontal), A1:A5 (Vertical), A1:D5 (Multiple selection))
+Worksheets (Tabs of sheets of excel. e.g., | Sheet1 | Sheet2 | )

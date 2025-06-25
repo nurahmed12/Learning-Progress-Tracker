@@ -1,6 +1,6 @@
 {
   "Stage 1: Excel & Spreadsheets (Weeks 1\u20132)": {
-    "Basic Navigation: Ribbons, Cells, Ranges, Worksheets": false,
+    "Basic Navigation: Ribbons, Cells, Ranges, Worksheets": true,
     "Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND": false,
     "Logical Functions: IF, AND, OR, NOT, IFS": false,
     "Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP": false,
