@@ -1,0 +1,90 @@
+{
+  "Stage 1: Excel & Spreadsheets (Weeks 1\u20132)": {
+    "Basic Navigation: Ribbons, Cells, Ranges, Worksheets": false,
+    "Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND": false,
+    "Logical Functions: IF, AND, OR, NOT, IFS": false,
+    "Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP": false,
+    "Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE": false,
+    "Date Functions: TODAY, NOW, DATE, YEAR, MONTH, DAY, EOMONTH": false,
+    "Aggregation: SUMIFS, COUNTIFS, AVERAGEIFS": false,
+    "Data Cleaning: Text to Columns, Remove Duplicates, Flash Fill": false,
+    "Pivot Tables: Create, Grouping, Calculated Fields, Refresh, Slicers": false,
+    "Charts: Bar, Column, Line, Pie, Combo, Sparklines": false,
+    "Data Validation & Conditional Formatting": false,
+    "Basic Macros Recording": false
+  },
+  "Stage 2: SQL Fundamentals (Weeks 3\u20134)": {
+    "Database Concepts: Tables, Schemas, Primary/Foreign Keys, Indexes": false,
+    "Basic Queries: SELECT, FROM, WHERE, DISTINCT": false,
+    "Filtering: AND, OR, NOT, BETWEEN, IN, LIKE, IS NULL": false,
+    "Sorting & Limiting: ORDER BY, LIMIT/TOP": false,
+    "Aggregations: COUNT, SUM, AVG, MIN, MAX, GROUP BY, HAVING": false,
+    "Joins: INNER, LEFT, RIGHT, FULL OUTER, CROSS": false,
+    "Subqueries: Correlated & Non-correlated": false,
+    "Common Table Expressions (CTEs)": false,
+    "Window Functions: ROW_NUMBER, RANK, DENSE_RANK, LEAD, LAG": false,
+    "Set Operations: UNION, UNION ALL, INTERSECT, EXCEPT": false,
+    "Case Statements, Aliases, Comments": false,
+    "Transactions & Basic Optimization": false
+  },
+  "Stage 3: Python & Libraries (Weeks 5\u20138)": {
+    "Python Basics: Variables, Data Types, Control Flow, Functions": false,
+    "Data Structures: Lists, Tuples, Dictionaries, Sets": false,
+    "Comprehensions: List, Dict, Set Comprehensions": false,
+    "Pandas: DataFrame & Series Creation, Indexing, Selection": false,
+    "Data Cleaning: dropna, fillna, astype, duplicate handling": false,
+    "Data Manipulation: merge, join, concat, groupby, pivot_table": false,
+    "NumPy: Arrays, Broadcasting, Vectorized Operations": false,
+    "String Methods, DateTime Operations in Pandas": false,
+    "Exploratory Data Analysis: describe, info, value_counts": false,
+    "Visualizations: matplotlib (plot, hist, scatter), seaborn (pairplot)": false,
+    "File I/O: read_csv, read_excel, to_csv, to_excel": false,
+    "Basic Web Scraping: requests, BeautifulSoup (optional)": false
+  },
+  "Stage 4: Data Visualization & BI Tools (Weeks 9\u201312)": {
+    "Visualization Principles: Chart Selection, Color Theory, Storytelling": false,
+    "Tableau: Data Connection, Worksheets, Dashboards, Stories": false,
+    "Tableau: Filters, Parameters, Calculated Fields, Level of Detail": false,
+    "Power BI: Power Query (M), Data Model, DAX Basics": false,
+    "Power BI: Measures vs Columns, Relationships, Hierarchies": false,
+    "Interactive Elements: Slicers, Drill-through, Tooltips": false,
+    "Publishing: Tableau Public, Power BI Service": false,
+    "Dashboard Best Practices & Performance Optimization": false
+  },
+  "Stage 5: Statistics & Analysis Techniques (Weeks 13\u201316)": {
+    "Descriptive Statistics: Mean, Median, Mode, Variance, Std Dev": false,
+    "Probability Distributions: Normal, Binomial, Poisson": false,
+    "Inferential Statistics: Sampling, Central Limit Theorem": false,
+    "Hypothesis Testing: Z-test, T-test, Chi-square test, ANOVA": false,
+    "Regression Analysis: Linear, Multiple, Interpretation of Coefficients": false,
+    "Correlation vs Causation, Multicollinearity": false,
+    "Time Series Basics: Trend, Seasonality, Moving Averages": false,
+    "A/B Testing: Design, Metrics, Significance": false,
+    "Key Business Metrics: ROI, CLV, CAC, Churn Rate, Conversion Rate": false
+  },
+  "Stage 6: Advanced Topics & Tools (Weeks 17\u201320)": {
+    "SQL Optimization: Indexing, EXPLAIN Plan": false,
+    "Python Advanced: Lambda, Map/Reduce, Decorators, Virtual Envs": false,
+    "Git & GitHub: Version Control, Branching, Pull Requests": false,
+    "Cloud Basics: AWS S3, Redshift, BigQuery (overview)": false,
+    "ETL Concepts: Airflow, Data Pipelines, Scheduling": false,
+    "Intro to Machine Learning: Scikit-learn (regression/classification)": false,
+    "Automation: Python Scripts, APIs, Scheduling with Cron/Windows Task": false
+  },
+  "Stage 7: Portfolio & Soft Skills (Weeks 21\u201324)": {
+    "Project Selection: Real-world Datasets (Kaggle, Government Data)": false,
+    "End-to-End Projects: Define question, Data Cleaning, Analysis, Reporting": false,
+    "Documentation: Jupyter Notebooks, README files, Project Summaries": false,
+    "Portfolio Site: GitHub Pages, Notion, Personal Website": false,
+    "Communication: Presentations, Storyboarding, Visual Aids": false,
+    "Interview Prep: SQL challenges, Case Studies, Technical Questions": false,
+    "Behavioral Prep: STAR Method, Common HR Questions": false
+  },
+  "Stage 8: Job Application & Growth (Weeks 25\u201326)": {
+    "Resume Tailoring: Quantify Achievements, Keywords Optimization": false,
+    "LinkedIn Optimization: Headline, Summary, Networking": false,
+    "Applying: ATS-friendly Applications, Follow-ups, Referrals": false,
+    "Mock Interviews: Technical & Behavioral": false,
+    "Continuous Learning: Certifications, Workshops, Online Communities": false
+  }
+}
