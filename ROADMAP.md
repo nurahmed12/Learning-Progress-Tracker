@@ -1,6 +1,6 @@
 # 📍 Detailed Data Analyst Roadmap Tracker
 
-# Progress ( 🟢 = Completed, ⚪️ = Pending )
+## Progress ( 🟢 = Completed, ⚪️ = Pending )
 
 ## Stage 1: Excel & Spreadsheets (Weeks 1–2)
 - 🟢 Basic Navigation: Ribbons, Cells, Ranges, Worksheets  
