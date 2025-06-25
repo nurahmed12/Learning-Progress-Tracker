@@ -7,12 +7,12 @@ Tracking my journey towards completion of different fields.
 1. Clone this repo:
    ```bash
    git clone https://github.com/nurahmed12/Learning-Progress-Tracker.git
-   cd Data-Analyst-Roadmap-Tracker
+   cd Learning-Progress-Tracker
    ```
 2. Check off topics in `DATA-ANALYST.md` as you complete them.
 3. Sync your progress file:
    ```bash
-   python update_progress.py "Stage 1" "Basic Navigation: Ribbons, Cells, Ranges, Worksheets"
+   python update-data-analyst_progress.py "Stage 1" "Basic Navigation: Ribbons, Cells, Ranges, Worksheets"
    ```
 4. Commit & push your updates:
    ```bash
