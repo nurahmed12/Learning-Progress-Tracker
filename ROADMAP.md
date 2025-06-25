@@ -1,7 +1,7 @@
 # 📍 Detailed Data Analyst Roadmap Tracker
 
 ## Stage 1: Excel & Spreadsheets (Weeks 1–2)
-- [ ] Basic Navigation: Ribbons, Cells, Ranges, Worksheets
+- [ ] Basic Navigation: Ribbons, Cells, Ranges, Worksheet
 - [ ] Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND
 - [ ] Logical Functions: IF, AND, OR, NOT, IFS
 - [ ] Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP
