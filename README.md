@@ -1,6 +1,6 @@
 # Learning Progress Tracker
 
-Tracking my journey towards completion of different fields.
+Tracking my journey towards completion of learning different skills.
 
 ## How to Use
 
