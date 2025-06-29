@@ -1,4 +1,50 @@
 Stage 1 : Excel & Spreadsheets (Week 1-2)
+- Introduction: Worksheets, Ribbon (hide, unhide), Formula Bar (hide, unhide), Gridlines, Name Box, Manual Calculation, Auto Apply, Boolean Comparisons, Select All, Navigate to the End, Alignment, Scrolling Bar, Multiple Sheets and Navigation, Zoom, Font Basics, Status Bar, Page Layout, Save | Create | Open, Print
+
+Create and delete worksheets
+Undo Redo button
+Hide, Unhide, and Pin ribbon (Menu bar)
+Minimize and Maximize Formula Bar
+Hiding and Unhiding Heading, Formula Bar, Gridlines from View Menu
+Name box, where cell number is shown
+Calculating manually by placing = and then clicking which cells are we trying to add, subtract, multiply, divide. e.g., =B2*C2
+How to pull cells to automatically calculate rest of the values after calculating one
+We can also perform Boolean operations or comparisons. e.g., =B2=B3 FALSE, =B2<B3 TRUE
+Selecting the entire sheet by clicking the arrow at the top left corner of the sheet
+Ctrl + Navigation button (up, left, bottom, right) takes us to the end of the sheet
+Centering values in the cell through Home -> Alignment 
+Vertical and Horizontal Scroll
+Create multiple Sheets and navigating to them
+Zoom in Zoom out, Font Size, Style etc etc
+Status bar (Bottom left) shows Ready (ready to work), Enter (pressing enter will complete)
+Page Layout beside the Zoom option that shows how many cells can fit inside an A4 size paper
+Creating new files, Saving files, Opening files manually and with Keyboard Shortcut (Ctrl + N, Ctrl + S, Ctrl + O)
+Print the excel file
+
+- Introduction (Cut, Copy, Paste, Format Painter, Clear All):
+
+Copy, Cut, Paste using buttons from Home and using shortcuts (Ctrl + x | c | v)
+After changing font or style or color of a cell element, we can select that cell and click Format Printer and then drag other cells to apply same font or style or color to them as well
+When we copy or cut something then the Clipboard contains that value, we can simply take it use it later, we can click Paste All to paste all Clipboard elements at once
+
+- Font Group (All Options):
+
+Double clicking a column edge will automatically adjust it's size to show full texts, based on the elements it contains
+Font size increase and decrease
+Different Fonts and styles (Ctrl + B makes texts bold, same goes to Ctrl + U | I)
+Click arrow beside Underline to choose Double Underline
+Font and Cell Color change
+Phone number's first 0 is not shown, so we start with ' and then type number to show the leading 0, but it will be considered String
+Select a cell and press Del from keyboard to delete that cell element
+Choosing Borders for a group of cells
+When a cell contains number and it is resized to small, the number will be shown as Complex Number
+Home -> Font -> Strikethrough then the text or number of the selected cell will be crossed in the middle
+For Superscript or Subscript, select the value that will go up, then click Superscript or Superscript from Font box arrow
+If dragging a cell doesn't give you a series of sequential elements, then click Fill Series
+If date is not increasing like you want, try different sequence until it automatically makes the cell into date format
+Use Paste Special to copy column and paste it as row
+Draw Border Grid can help us easily draw a border around any range of cells
+
 - Basic Navigation: 
 Ribbons (The navigations on the top, can be hidden using Ctrl + F1)
 Cells (Where we insert data)
