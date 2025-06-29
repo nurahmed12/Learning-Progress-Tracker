@@ -1,6 +1,8 @@
 {
   "Stage 1: Excel & Spreadsheets (Weeks 1\u20132)": {
-    "Basic Navigation: Ribbons, Cells, Ranges, Worksheets": true,
+    "Introduction: Worksheets, Ribbon (hide, unhide), Formula Bar (hide, unhide), Gridlines, Name Box, Manual Calculation, Auto Apply, Boolean Comparisons, Select All, Navigate to the End, Alignment, Scrolling Bar, Multiple Sheets and Navigation, Zoom, Font Basics, Status Bar, Page Layout, Save | Create | Open, Print": true,
+    "Introduction: Cut, Copy, Paste, Format Painter, Clear All": true,
+    "Font Group (All Options)": true,
     "Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND": false,
     "Logical Functions: IF, AND, OR, NOT, IFS": false,
     "Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP": false,
