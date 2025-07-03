@@ -45,6 +45,48 @@ If date is not increasing like you want, try different sequence until it automat
 Use Paste Special to copy column and paste it as row
 Draw Border Grid can help us easily draw a border around any range of cells
 
+- Alignment, Wrap Text, Merge & Center:
+
+Go to Paper Layout -> Page Setup -> Paper Size and choose appropriate paper size such as A4
+Align your cell elements using the Home -> Alignment and choosing either of the given alignment
+From Home, click the Orientation right above the Alignment and choose alignments such as Angle Clockwise or Angle Counterclockwise
+On the left side of the Orientation, the Indents can be found. We can use it to move the elements inside the cell left or right little by little
+On the Alignment section, we can also find the Merge & Align section, we  can use it to merge multiple cells
+We can also use Increase Intends and Decrease Indent on merge cells, and based on the merge, they behave differently
+You can also insert pictures of any size and resize into cells, you can also align pictures into anywhere inside the cell, you can even remove Background of the image 😱
+If you want to keep the Cell Size and also fit texts inside the cell, then click Wrap Text in the Alignment section
+You can set Margins to adjust the contents inside the page, go to Page Layout then Page Setup and adjust Margins
+
+- Currency, Accounting, Currency VS Accounting:
+
+From Home -> Number you can select Currency or Accounting format by changing General
+By default the currency and Accounting is formatted as USD, but you can change it to other currencies
+To remove the USD dollar sign, we can right click on the selected cell or cells, then go to Format Cells, and change the format to None
+In Currency format, the -100 is represented as -100 but in Accounting format, -100 is represented as (100)
+In Currency, 0 is represented as 0.00 and in Accounting, 0 is represented as -
+We can also change Currency symbol to other Symbols like Taka
+We can also set custom symbols such as TK instead of symbol from Right Click -> Format Cells -> Custom and then type 0.00 TK or 0.00 "TK"
+
+- Short Date, Long Date, Date, Time, Date & Time:
+
+If we insert a date into a cell and if it is left aligned, then the date format is not correct
+If the date format is showing MM/DD/YY then we can fix it by opening Control Panel and then clicking Clock and Region then changing the format. This will automatically change the Excel date format too
+Selecting one cell then clicking Ctrl + ; will automatically insert the current date in short form in the cell
+In order to add time along with date in Date, we can use Ctrl + ; + Space + Ctrl + Shift + ;
+
+- Percentage, Fraction, Scientific, Original Number:
+
+We can change value type into Percentage in many ways such as from General, Clicking Format Cells, Clicking at the top most of a column and then Right Click then Format Cells etc
+If we select Fraction type, then inserting any decimal value will automatically convert into Fraction
+If more than one values of fraction (233/523) is not shown, then we can go to Format Cells and then select Up To Three Digits
+
+- Styles Group Conditional Formatting (Highlight Cells Rules):
+
+Select cells and press Conditional Formatting then Highlight Cells Rules and then choosing any of the operations and then set a value or select a cell containing value to show insights
+To change the color of a condition, go to Select Color and then Custom then Fill
+We can access More rules like Greater Than or Equals To from Conditional Formatting -> Highlight Cells -> More Rules
+Blanks mean if there is any missing values or not
+
 - Basic Navigation: 
 Ribbons (The navigations on the top, can be hidden using Ctrl + F1)
 Cells (Where we insert data)

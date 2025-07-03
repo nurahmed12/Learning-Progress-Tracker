@@ -3,9 +3,14 @@
 ## Progress ( 🟢 = Completed, ⚪️ = Pending )
 
 ## Stage 1: Excel & Spreadsheets (Weeks 1–2)
-- 🟢 Introduction: Worksheets, Ribbon (hide, unhide), Formula Bar (hide, unhide), Gridlines, Name Box, Manual Calculation, Auto Apply, Boolean Comparisons, Select All, Navigate to the End, Alignment, Scrolling Bar, Multiple Sheets and Navigation, Zoom, Font Basics, Status Bar, Page Layout, Save | Create | Open, Print
-- 🟢 Introduction: Cut, Copy, Paste, Format Painter, Clear All
+- 🟢 Introduction (Worksheets, Ribbon (hide, unhide), Formula Bar (hide, unhide), Gridlines, Name Box, Manual Calculation, Auto Apply, Boolean Comparisons, Select All, Navigate to the End, Alignment, Scrolling Bar, Multiple Sheets and Navigation, Zoom, Font Basics, Status Bar, Page Layout, Save | Create | Open, Print)
+- 🟢 Introduction (Cut, Copy, Paste, Format Painter, Clear All)
 - 🟢 Font Group (All Options)
+- 🟢 Number Group (Alignment, Wrap Text, Merge & Center)
+- 🟢 Number Group (Currency, Accounting, Currency VS Accounting)
+- 🟢 Number Group (Short Date, Long Date, Date, Time, Date & Time)
+- 🟢 Number Group (Percentage, Fraction, Scientific, Original Number)
+- 🟢 Styles Group Conditional Formatting (Highlight Cells Rules)
 - ⚪️ Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND  
 - ⚪️ Logical Functions: IF, AND, OR, NOT, IFS  
 - ⚪️ Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP  
