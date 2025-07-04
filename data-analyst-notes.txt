@@ -87,6 +87,27 @@ To change the color of a condition, go to Select Color and then Custom then Fill
 We can access More rules like Greater Than or Equals To from Conditional Formatting -> Highlight Cells -> More Rules
 Blanks mean if there is any missing values or not
 
+- Styles Group Conditional Formatting (Top and Botton Rules):
+
+Ctrl + Shift + Down Arrow from one cell will automatically select an entire column
+We can easily sort an entire column using the Sort & Filter in Home menu on the right side of Auto Sum
+
+- Styles Group Conditional Formatting (Data Bars & Color Scales):
+
+In order to insert an entire row or rows, we have to click the most left row number, then right click and insert. We can pull the black dot to select more rows, and then inserting will add more rows as well. Same goes for column
+We can use Data Bars to represent sum or other calculated values in a bar form, We can remove digits and only show bars, in order to do it we need to select the bars area then go to Conditional Formatting -> More Rules -> Edit Rules -> Only Bars
+Different Color Scales represent different values, you can either choose red to indicate extreme value and green as normal value, or you can do the opposite
+We can go to Conditional Formatting -> Manage Rules and modify rules as needed
+We can also Change the range for which the color will change, for that we need to change the Type from Manage Rules -> Edit Rules into Number, then we can set values
+We can do the same for Percent
+We can also use Formula like =average(A1:A9)
+Percent means “out of 100.”
+→ Example: 75% = 75 out of 100.
+Percentile tells you the position in a dataset.
+→ Example: 75th percentile = you scored better than 75% of the group.
+Percent = value
+Percentile = rank
+
 - Basic Navigation: 
 Ribbons (The navigations on the top, can be hidden using Ctrl + F1)
 Cells (Where we insert data)

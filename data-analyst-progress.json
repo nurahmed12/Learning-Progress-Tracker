@@ -8,6 +8,8 @@
     "Number Group (Short Date, Long Date, Date, Time, Date & Time)": true,
     "Number Group (Percentage, Fraction, Scientific, Original Number)": true,
     "Styles Group Conditional Formatting (Highlight Cells Rules)": true,
+    "Styles Group Conditional Formatting (Top and Botton Rules)": true,
+    "Styles Group Conditional Formatting (Data Bars & Color Scales)": true,
     "Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND": false,
     "Logical Functions: IF, AND, OR, NOT, IFS": false,
     "Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP": false,

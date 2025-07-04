@@ -11,6 +11,8 @@
 - 🟢 Number Group (Short Date, Long Date, Date, Time, Date & Time)
 - 🟢 Number Group (Percentage, Fraction, Scientific, Original Number)
 - 🟢 Styles Group Conditional Formatting (Highlight Cells Rules)
+- 🟢 Styles Group Conditional Formatting (Top and Botton Rules)
+- 🟢 Styles Group Conditional Formatting (Data Bars & Color Scales)
 - ⚪️ Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND  
 - ⚪️ Logical Functions: IF, AND, OR, NOT, IFS  
 - ⚪️ Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP  
