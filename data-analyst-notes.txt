@@ -108,6 +108,35 @@ Percentile tells you the position in a dataset.
 Percent = value
 Percentile = rank
 
+- Styles Group Conditional Formatting (Icon Sets, and New Rules):
+
+Double cliking selected cells' + icon will automatically copy an entire column instead of just seleting an entire column manually by dragging the + icon to the bottom or top
+We can select multiple rows or columns by pressing Ctrl + left click
+We can change values for which the icons will be shown from Conditional Formatting -> Manage Rules -> Edit Rules and then changing Percent to Number, we can also change condition from <= to <
+Select and entire table, then go to Conditional Formatting -> New Rule then press -> Use formula to determine which cell to format ten press = and select a cell that you want to use to find all information about that cells' row, then It would show something like this =$E$9, remove $ from 9 so that the column is locked but all rows are unlocked ($ unlocks rows or columns), after that click = and click a cell outside of the table, then click format and fill a color, after that if you type any item (of the column that you used to find its' row information) in that cell outside of the table it will color the row corrosponding to that value
+We can also make a rule so that whenever any text value is inserted into a cell where a number should have been placed, then the cell or eells will change color, for that we need to select a cell and go to New Rule -> Use formula to determine which cell to format then click = and type istext() and select any cell that you want to check whther it is text or not and remove the $ from both row and column and then Fill with appropriate color, after applying that use format printer to apply same rules to other cells that you want this rule to be applied on, then if any of the selected cell has text then the color of that cel will change
+We can type =istext() or =isnmber() and then click a cell to show TRUE or FAlSE in any other cell
+
+- Styles Group (Format as Table):
+
+Clicking the bottom right most cell of a table and ten pressing Tab from keyboard will automatically insert a row at the bottom
+In order to get sum value of all rows in the last column, we have to select the last column, and then press Alt + = and the column will turn into Sum or Total Column
+We can access many functionalities such as Filter from each column header down arrow
+We can use Select All from filter to show everything and unckeck parts that we don't want to see
+
+- Styles Group (Cells Styles):
+
+We can modify a Cell Style by right cliking on the style and then click on Modify
+In order to get commas within big numbers, we can select cells and then go to Cell Styles and click Commas right below the Number section
+Comma[0] means there will be no decimal values
+We can make a custom style by clicking New Cell Style -> Format -> Custom then choosing #,##0 and typing #,##0 "/-" then ok, after that Style 2 will be created, we can choose style 2 to see the results
+Merge Styles is used to bring one worksheet styles into another
+
+- Cells Group (Insert and Delete):
+ 
+Insert Sheet Rows/Columns will add an entire row or column
+Insert Sheet is used to add Sheets and same goes for the Delete Sheet
+
 - Basic Navigation: 
 Ribbons (The navigations on the top, can be hidden using Ctrl + F1)
 Cells (Where we insert data)

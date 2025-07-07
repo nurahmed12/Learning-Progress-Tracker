@@ -13,6 +13,10 @@
 - 🟢 Styles Group Conditional Formatting (Highlight Cells Rules)
 - 🟢 Styles Group Conditional Formatting (Top and Botton Rules)
 - 🟢 Styles Group Conditional Formatting (Data Bars & Color Scales)
+- 🟢 Styles Group Conditional Formatting (Icon Sets, and New Rules)
+- 🟢 Styles Group (Format as Table)
+- 🟢 Styles Group (Cell Styles)
+- 🟢 Cells Group (Insert and Delete)
 - ⚪️ Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND  
 - ⚪️ Logical Functions: IF, AND, OR, NOT, IFS  
 - ⚪️ Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP  
