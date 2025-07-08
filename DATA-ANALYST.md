@@ -21,6 +21,7 @@
 - 🟢 Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND, and More Functions 
 - 🟢 Fill Option (Up, Down, Left, Right, Across Worksheet) 
 - 🟢 Fill Option (Fill Series and Justify) 
+- 🟢 Clear Option (Clear All, Clear Formats, Clear Contents, Clear Comments) 
 - ⚪️ Logical Functions: IF, AND, OR, NOT, IFS  
 - ⚪️ Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP  
 - ⚪️ Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE  

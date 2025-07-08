@@ -129,6 +129,7 @@ Clicking the bottom right most cell of a table and ten pressing Tab from keyboar
 In order to get sum value of all rows in the last column, we have to select the last column, and then press Alt + = and the column will turn into Sum or Total Column
 We can access many functionalities such as Filter from each column header down arrow
 We can use Select All from filter to show everything and unckeck parts that we don't want to see
+Ctrl + T will automatically convert the selected area as table
 
 - Styles Group (Cells Styles):
 
@@ -176,4 +177,18 @@ In order to access Across Worksheets, we need to select an area then while holdi
 
 - Fill Option (Fill Series and Justify):
 
+If you have one cell containing a number and you want to create a series then choose an area Rowwise or Columnwise then go to Fill > Series then choose either Rows or Columns based on your need and then set a number range if desired and press ok
+Alternatively you can use shortcut Alt + E + I + S then Enter
+If you want to move a column or row to another place without using copy paste, then Select the Column or Row, then Hover the mouse until a Move icon shows up, then Click while Holding Shift and move it to whereever needed
+Linear increases additionally, Growth increases multiplically, WorkDay means all the Working Days excluding the Off Days, 
+Normal Fill = repeats or continues a simple pattern
+Trend Fill = fits a mathematical trend line (more intelligent)
+When we have a big sentence that does not fit into a cell by default then we can use Justify to break that sentence into words and insert those words below cells one by one, It will break the sentence based on the Cell size
 
+- Clear Option (Clear All, Clear Formats, Clear Contents, Clear Comments):
+
+We can add comments on cells by right clicking on a cell and pressing Insert Comment
+We can also reshape the Comment Box, Hide, Unhide it
+Clear Formats/Contents/Comments/Hyperlinks removes specific part of the selected area but Clear All removes everything
+Clear Hyperlinks removes only hyperlinks while Remove Hyperlinks removes both hyperlinks and formatting (underline, blue color
+)

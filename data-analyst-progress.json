@@ -18,6 +18,7 @@
     "Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND, and More Functions": true,
     "Fill Option (Up, Down, Left, Right, Across Worksheet)": true,
     "Fill Option (Fill Series and Justify)": true,
+    "Clear Option (Clear All, Clear Formats, Clear Contents, Clear Comments)": true,
     "Logical Functions: IF, AND, OR, NOT, IFS": false,
     "Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP": false,
     "Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE": false,
