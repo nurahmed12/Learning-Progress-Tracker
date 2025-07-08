@@ -27,6 +27,12 @@ Copy, Cut, Paste using buttons from Home and using shortcuts (Ctrl + x | c | v)
 After changing font or style or color of a cell element, we can select that cell and click Format Printer and then drag other cells to apply same font or style or color to them as well
 When we copy or cut something then the Clipboard contains that value, we can simply take it use it later, we can click Paste All to paste all Clipboard elements at once
 
+- Basic Navigation: 
+Ribbons (The navigations on the top, can be hidden using Ctrl + F1)
+Cells (Where we insert data)
+Range (Selected cells area. e.g., A1:D1 (Horizontal), A1:A5 (Vertical), A1:D5 (Multiple selection))
+Worksheets (Tabs of sheets of excel. e.g., | Sheet1 | Sheet2 | )
+
 - Font Group (All Options):
 
 Double clicking a column edge will automatically adjust it's size to show full texts, based on the elements it contains
@@ -72,7 +78,7 @@ We can also set custom symbols such as TK instead of symbol from Right Click -> 
 If we insert a date into a cell and if it is left aligned, then the date format is not correct
 If the date format is showing MM/DD/YY then we can fix it by opening Control Panel and then clicking Clock and Region then changing the format. This will automatically change the Excel date format too
 Selecting one cell then clicking Ctrl + ; will automatically insert the current date in short form in the cell
-In order to add time along with date in Date, we can use Ctrl + ; + Space + Ctrl + Shift + ;
+In order to add time along with date in Date, we can use Ctrl + ; , Space , Ctrl + Shift + ;
 
 - Percentage, Fraction, Scientific, Original Number:
 
@@ -137,8 +143,37 @@ Merge Styles is used to bring one worksheet styles into another
 Insert Sheet Rows/Columns will add an entire row or column
 Insert Sheet is used to add Sheets and same goes for the Delete Sheet
 
-- Basic Navigation: 
-Ribbons (The navigations on the top, can be hidden using Ctrl + F1)
-Cells (Where we insert data)
-Range (Selected cells area. e.g., A1:D1 (Horizontal), A1:A5 (Vertical), A1:D5 (Multiple selection))
-Worksheets (Tabs of sheets of excel. e.g., | Sheet1 | Sheet2 | )
+- Cells Group (Format Option):
+
+You can manually Fit Columns or Rows according to their elements by selecting the area, then Cells -> Format -> AutoFit Row Hight or AutoFit Column Width
+Or you can use shortcut such as Ctrl + A to select everything, then Alt + H O A for Row Hight, and Alt + H O I for Column Width
+Or we can set size of rows hight and column width by clicking Cells -> Format -> Row Hight or Column Width
+We can also Hide, Unhide Columns or Rows
+We can select a a specific area of a sheet by clicking one Cell of that area and then Ctrl + A, This will only select the area instead of the entire sheet
+We can rename sheets and change their order
+Locked cells prevent editing when the sheet is protected.
+Cells are locked by default so you can choose what to protect when applying Sheet Protection.
+Lock only works after enabling Review > Protect Sheet or Cells > Format > Protect Sheet
+Built a project using if and Lock feature
+
+- Formulas & Functions (SUM, AVERAGE, COUNT, MIN, MAX, ROUND, and More Functions):
+
+We can find sum multiple ways like selecting an area will show sum at the bottom most of the sheet, Another way is using AutoSum, then we can also use formula such as =SUM(E8:f4)
+We can swap Columns or Rows by pressing Ctrl + X on the selected Row or Column, then click on the first cell of the place where you want to place the current Row or Column and then press Ctrl + Shift + =
+ROUND(Cell or Value, number of digits) 
+ROUND(E11, 0) Means non decimal round, Rounds to the nearest whole number, e.g., 10.3 > 10 and 10.7 > 11, if 10.5 > 11
+ROUND(E11, 1 or any positive number) Means decimal round, Rounds the (1 or any positive number)th value to it's nearest whole number, e.g., ROUND(7.445, 1) > 7.4, ROUND(7.445) > 7.45
+ROUND(E11, -1 or any negative number) Means tens, hundreds or more round, Rounds the (1 or any negative number) + 1th number from right most to it's nearest whole number based on the (1 or any negative number)th number, e.g., ROUND(123412, -1) > 123410, ROUND(123416, -1) > 123420, ROUND(123415, -2) > 123400
+ROUNDUP(E11, 0 or Positive or Negative) Similar to ROUND() function but it only rounds to the next whole number, e.g., ROUNDUP(5.1, 0) > 6
+ROUNDDOWN(E11, 0 or Positive or Negative) Opposite of ROUNDUP()
+MROUND(E11, multiple) Rounds to the nearest Multiple, e.g., MROUND(12311, 4) > 12312 Means 12312 is the nearest to 12311 which can be devided by 4
+
+- Fill Option (Up, Down, Left, Right, Across Worksheet):
+
+Fill option has multiple elements such as Up, Down, Left Right (Ctrl + U or D or L or R), we use it to copy and paste a cell content to the selected area of cells
+We can alternatively use the Auto Fill Options icon that appears after we select a series of cells, we can change it to Copy Cells
+In order to access Across Worksheets, we need to select an area then while holding Ctrl we need to click the Sheet we want to use as destinition, then the Across Worksheet will be active, then we need to click Across Worksheet and we will find options such as All, Contents, Format, we can choose either of them to copy paste items across worksheets
+
+- Fill Option (Fill Series and Justify):
+
+

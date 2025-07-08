@@ -17,7 +17,10 @@
 - 🟢 Styles Group (Format as Table)
 - 🟢 Styles Group (Cell Styles)
 - 🟢 Cells Group (Insert and Delete)
-- ⚪️ Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND  
+- 🟢 Cells Group (Format Option)
+- 🟢 Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND, and More Functions 
+- 🟢 Fill Option (Up, Down, Left, Right, Across Worksheet) 
+- 🟢 Fill Option (Fill Series and Justify) 
 - ⚪️ Logical Functions: IF, AND, OR, NOT, IFS  
 - ⚪️ Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP  
 - ⚪️ Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE  
