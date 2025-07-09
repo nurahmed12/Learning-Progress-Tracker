@@ -190,5 +190,59 @@ When we have a big sentence that does not fit into a cell by default then we can
 We can add comments on cells by right clicking on a cell and pressing Insert Comment
 We can also reshape the Comment Box, Hide, Unhide it
 Clear Formats/Contents/Comments/Hyperlinks removes specific part of the selected area but Clear All removes everything
-Clear Hyperlinks removes only hyperlinks while Remove Hyperlinks removes both hyperlinks and formatting (underline, blue color
-)
+Clear Hyperlinks removes only hyperlinks while Remove Hyperlinks removes both hyperlinks and formatting (underline, blue color)
+
+- Editing Group (Sorting):
+
+In order to generate random series you can use the formula =ROUND(Value1, (Value2 - Value1) * RAND(), 2) , this will generate random numbers between Value1 and Value2
+1. RAND()
+Returns a random decimal number between 0 and 1.
+Example output: 0.2438, 0.8793, etc.
+2. (b - a)
+This is the range or width of the interval.
+For example, if a = 5 and b = 10, then (b - a) = 5.
+3. (b - a) * RAND()
+Scales the random number into your desired range.
+Now you get a random decimal between 0 and (b - a).
+Example: If RAND() = 0.3, and (b - a) = 5, then this part is 1.5.
+4. a + ...
+This shifts the number up to start at a.
+So you now get a number between a and b.
+Example: a = 5, so 5 + 1.5 = 6.5
+5. ROUND(..., 2)
+Rounds the final result to 2 decimal places.
+We can also sort color wise, for that, go to Sort & Filter > Custom Sort and select Sort on to Color, then we can choose Order color and Ascending or Descending, after that we can Add Level and order the color based on our need
+We can use the Up and Down buttons to move a selected Cell upward or downward
+We can also do the same for Cell Icons
+We can customize the order by selecting Custom List and listing the values as we desire
+We can also save the custom order by clicking the Add button
+We can sort multiple columns by selecting them and then choosing Custom sort and adding levels for each column
+If we select an area where a blank cell exists, then sorting will place that blank cell at the most bottom
+We can select a single cell of a column and click sort and the entire column will be sorted
+If we want to sort a single column of an area where all the columns are connected, then an warning messege will pop and give us two options, where if we choose Expand the selection then the entire area will change with the sort, but If we choose Continue with current selection then the connection will not be represented properly
+Selecting an entire area and then custom sorting only one column will change others accordingly
+
+- Editing Group (Custom Sort):
+
+If our columns are not placed sequentially like Name ID Income Age, then we can custom sort it and fix their positions, in order to do that we need to mark 1 to n (number of columns) to each column based on which position what column should be in ascending order, we should mark each cell by placing 1 to n on their immidiate above cell, then we should select the area with those marked cells above, after that we click Custom sort > Options > Sort left to right, and then we should select Sort by as the initial row number
+We can do the same thing for Top to bottom
+
+- Editing Group (Filter):
+
+Ctrl + Shift + L turn Auto Filters to selected area, you may see dropdown icon appear, but that does not mean that the area is converted into a table, it shows up because of AutoFilters, in order to convert a selected area into table, use Ctrl + T
+AND = Both condition must be true
+OR = Either one can be true or both
+Once we apply filter to a selected area and then make any change in any cell or rows of the selected cell, then the Reapply option becomes accessible, by clicking Reapply button, we can reapply all the filters to the changed cells or rows and the cells or rows of the selected area will change 
+
+- Editing Group (Find & Replace):
+
+Ctrl + F is the shortcut for Find and Replace
+From Options << we can find Match case, which will only show targets that matches exactly, and becomes case sensitive
+Match entire cell contents will only show targets that matches only search portion, cells containing additional contents will not be shown, it is not case sensitive
+If we select Within Workbook, then all targets accross all sheets will be shown
+By rows mean the search will show next results row by row if the target is present in the same row, and then to the next column
+By columns mean the opposite
+If we select Lock in as Comments, and write something for example Good Boy in the Find what box, then the result will show all comments containing Good Boy
+Ctrl + H will redirect you to the Find and Replace > Replace 
+If we want to replace formats accross cells then, click Format box of Find what and select Choose format from cells and click which cell you want as target, then click the Format box of Replace with, then you can either manually select a format or you can Choose format from other cells
+

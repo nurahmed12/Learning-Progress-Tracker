@@ -22,6 +22,10 @@
 - 🟢 Fill Option (Up, Down, Left, Right, Across Worksheet) 
 - 🟢 Fill Option (Fill Series and Justify) 
 - 🟢 Clear Option (Clear All, Clear Formats, Clear Contents, Clear Comments) 
+- 🟢 Editing Group (Sorting) 
+- 🟢 Editing Group (Custom Sort) 
+- 🟢 Editing Group (Filter) 
+- 🟢 Editing Group (Find & Replace) 
 - ⚪️ Logical Functions: IF, AND, OR, NOT, IFS  
 - ⚪️ Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP  
 - ⚪️ Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE  
