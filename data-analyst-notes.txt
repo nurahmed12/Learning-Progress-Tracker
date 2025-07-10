@@ -211,6 +211,7 @@ So you now get a number between a and b.
 Example: a = 5, so 5 + 1.5 = 6.5
 5. ROUND(..., 2)
 Rounds the final result to 2 decimal places.
+We can also use =RANDBETWEEN(Value1, Value2), it will generate random numbers between Value1 and Value2
 We can also sort color wise, for that, go to Sort & Filter > Custom Sort and select Sort on to Color, then we can choose Order color and Ascending or Descending, after that we can Add Level and order the color based on our need
 We can use the Up and Down buttons to move a selected Cell upward or downward
 We can also do the same for Cell Icons
@@ -246,3 +247,16 @@ If we select Lock in as Comments, and write something for example Good Boy in th
 Ctrl + H will redirect you to the Find and Replace > Replace 
 If we want to replace formats accross cells then, click Format box of Find what and select Choose format from cells and click which cell you want as target, then click the Format box of Replace with, then you can either manually select a format or you can Choose format from other cells
 
+- Editing Group (Find & Select (Go to & Go to Special)):
+
+Ctrl + G is the shortcut for Go To section
+Fn + F5 is an alternative shortcut
+Go to is used to go to any specific cell
+Constants mean cells that does not have any formula, or general data
+=CONCATENATE(E11, " ", D11) is used to concatenate two strings and create a new strings, in this case cell E11 and D11 are combined with a space " " to create a new string
+Current region will select an area if the current selected cell belongs to one area, if not, then only the cell will be shown
+Array is used to perform calculations with multiple cells at once, in traditional ways we apply a formula and drag down the formula to generate other results with same formula, but in array, when we apply a formula, it automatically applies the formula to other selected cells as well
+regular formulas as scalar operations: they take one (or a few) inputs and give you one output in a single cell. An array formula lets you work with whole sets of inputs at once, and — depending on the function — can return multiple outputs (spill into many cells) or feed a multi‑step calculation in one shot.
+In order to use array, we must use Ctrl + Shift + Enter in a cell to activate array to that cell
+e.g., We cannot do this normally =AVERAGE(C30:C45 - D30:D45), but by clicking Ctrl + Shift + Enter we can make it array and do this task
+WordArt, images, shapes, emojis are Objects

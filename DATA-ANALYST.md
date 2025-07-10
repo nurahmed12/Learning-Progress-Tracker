@@ -26,6 +26,7 @@
 - 🟢 Editing Group (Custom Sort) 
 - 🟢 Editing Group (Filter) 
 - 🟢 Editing Group (Find & Replace) 
+- 🟢 Editing Group (Find & Select (Go to & Go to Special)) 
 - ⚪️ Logical Functions: IF, AND, OR, NOT, IFS  
 - ⚪️ Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP  
 - ⚪️ Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE  

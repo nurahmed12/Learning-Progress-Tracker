@@ -23,6 +23,7 @@
     "Editing Group (Custom Sort)": true,
     "Editing Group (Filter)": true,
     "Editing Group (Find & Replace)": true,
+    "Editing Group (Find & Select (Go to & Go to Special))": true,
     "Logical Functions: IF, AND, OR, NOT, IFS": false,
     "Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP": false,
     "Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE": false,
