@@ -27,13 +27,14 @@
 - 🟢 Editing Group (Filter) 
 - 🟢 Editing Group (Find & Replace) 
 - 🟢 Editing Group (Find & Select (Go to & Go to Special)) 
+- 🟢 Data Validation (Any value and Whole number) 
+- 🟢 Pivot Tables: Create, Grouping, Calculated Fields, Refresh, Slicers
 - ⚪️ Logical Functions: IF, AND, OR, NOT, IFS  
 - ⚪️ Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP  
 - ⚪️ Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE  
 - ⚪️ Date Functions: TODAY, NOW, DATE, YEAR, MONTH, DAY, EOMONTH  
 - ⚪️ Aggregation: SUMIFS, COUNTIFS, AVERAGEIFS  
-- ⚪️ Data Cleaning: Text to Columns, Remove Duplicates, Flash Fill  
-- ⚪️ Pivot Tables: Create, Grouping, Calculated Fields, Refresh, Slicers  
+- ⚪️ Data Cleaning: Text to Columns, Remove Duplicates, Flash Fill    
 - ⚪️ Charts: Bar, Column, Line, Pie, Combo, Sparklines  
 - ⚪️ Data Validation & Conditional Formatting  
 - ⚪️ Basic Macros Recording  

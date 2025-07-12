@@ -260,3 +260,205 @@ regular formulas as scalar operations: they take one (or a few) inputs and give 
 In order to use array, we must use Ctrl + Shift + Enter in a cell to activate array to that cell
 e.g., We cannot do this normally =AVERAGE(C30:C45 - D30:D45), but by clicking Ctrl + Shift + Enter we can make it array and do this task
 WordArt, images, shapes, emojis are Objects
+Row difference and Column difference show non similar or unequal values within an area row by row or column by column
+Precedents and Dependents are like Independent and Dependent variables, Independents are those which leads to a calculation of other value, while dependents are the result that is derived from independents
+Ctrl + [ is the shortcut to find Precedent
+We can show tracking of Precedents by clicking Formulas > Trace precedents, then an arrow will show navigation fo how the precedents leads to a result
+Ctrl + ] is the shortcut for showing dependents
+Precedent -> What cells affect the value of the current or selected cell
+Dependent -> What cells are affected by the value of the current or selected cell
+If we select an entire column by clicking at the top and then press Ctrl + Shift + -> or <- then all of the cells including the selected column's cells will be selected in arrow's direction, then we can fill them with white color to make the cells disappear
+We can do the same with row by selecting a row as well
+Ctrl + end will take you to the last cell 
+Ctrl + home will take you to the first cell 
+If we hide some rows or columns and then copy the area and paste it in other sheets or files, then the hidden cells will also be pasted, in order to prevent that after we hide some cells or rows or columns, then we select the area and Go to special > Visible cells only then copy the area and paste it somewhere else, then the hidden cells will not be pasted
+We can use the shortcut Alt + ; to select Visible cells only
+Conditional formatting shows us where in the entire file Conditional formatting is applied
+
+- Data Validation (Any value and Whole number):
+
+If we choose a data validation from Data > Data Validation which is in the Data Tools section, then change Allow from Any value to other such as Whole number then the selected cells will only allow you to fill whole numbers only, if you try anything else, it will show an error
+We can also custom set an input message from Data > Data Validation > Input Message to show when the user is entering an input
+The input message pop up box can be dragged to some other place if bothering
+We can also select the Error Alert from Data > Data Validation > Style as Stop (Does not allow the user to continue), Warning (The user is shown a warning message but still can continue), Information (Similar to warning message)
+If we choose either Information or Warning and enter an invalid data then we can spot them by clicking Data Validation > Circle Invalid Data and all the invalid data will be circled
+We can clear the circles by clicking Data Validation > Clear Validation Circles
+After writing something in a cell and presseing Enter will move to the bottom cell, but pressing Shift + Enter will move to the above cell
+Instead of manually typing values in cells, we can use Dropdown list that adds a dropdown arrow attached to cells from which we can select pre defined values
+In order to do that we need to select the area then Data Validation, then select List in Allow section, and type which options or values you want to show in the list in source section
+We can also do another thing, we can list whichever contents that we want to use in the list in somewhere in the sheet, and instead of typing the options or values in the Source section we can select those cells where the elements are 
+If you add a new option or value in that reference list, then the value will not be shown in the dropdown, so you have to move the new option or value using Shift + Drag to the middle of that list
+We can also change order by moving or replacing cells within the reference list
+We can also use reference list from other sheets as well
+Text length means what will be the length of the text that we will put in every cell, suppose we write Hello in a cell, so if we set the text length to 5 then it will allow hello to be inserted, but if we add one more letter then it will show error, Note that space is also counted as letter
+For allowing only unique values remember this:
+1. Formula Pattern
+   =COUNTIF(<lookup_range>, <this_cell>) = 1
+   • Returns TRUE if the value in <this_cell> appears exactly once in <lookup_range>.
+
+2. Locking the Lookup Range
+   • Fixed block (e.g. rows 10–17 in column K):
+     =COUNTIF($K$10:$K$17, K10)=1
+     – $K$10:$K$17 stays the same when you copy down.
+     – K10 (no $) changes to K11, K12, etc.
+
+   • Entire column:
+     =COUNTIF($K:$K, K10)=1
+     – $K:$K always means the whole column K.
+     – Good for growing lists; slower on very large sheets; counts blanks too.
+
+3. Criterion Cell Reference
+   • Relative row (K10): adjusts to each row.
+   • Absolute row ($K$10): always tests cell K10.
+
+4. “$” Cheat‑Sheet
+   • $ before column (e.g. $K) locks column.
+   • $ before row (e.g. K$10) locks row.
+   • $K$10 locks both column and row (single cell).
+   • $K:$K locks entire column K.
+   • $K$10:$K$17 locks that exact block.
+
+CountIF function:
+
+Quick Guide to COUNTIF in Excel
+
+1. Function Structure  
+   COUNTIF(range, criteria)  
+   • Counts how many cells in range meet the given criteria.
+
+2. Parameters  
+   • range: the block of cells to check (e.g. A1:A100, K:K)  
+   • criteria: condition each cell is tested against (number, expression, text, wildcard, or cell reference)
+
+3. Types of Criteria  
+   • Number  
+     – COUNTIF(A1:A10, 5)  
+       Counts cells exactly equal to 5.  
+   • Expression (comparison)  
+     – COUNTIF(B1:B20, “>100”)  
+       Counts cells with values greater than 100.  
+     – Operators: =, <>, >, <, >=, <= (always in quotes)  
+   • Text  
+     – COUNTIF(C1:C50, “Apple”)  
+       Counts cells exactly matching “Apple” (case‑insensitive).  
+   • Wildcards  
+     – `*` matches any sequence of characters  
+       • COUNTIF(NameRange, "East*") finds “East”, “Eastern Campus”, etc.  
+       • COUNTIF(NameRange, "*son") finds “Johnson”, “Anderson”, etc.  
+     – `?` matches exactly one character  
+       • COUNTIF(CodeRange, "A?3") finds “AB3”, “A63” but not “A123”.  
+       • COUNTIF(WordRange, "?at") finds “Cat”, “Bat” but not “That”.  
+   • Cell reference  
+     – COUNTIF(F1:F50, G1)  
+       Counts cells equal to the value in G1.  
+   • Expression with reference  
+     – COUNTIF(F1:F50, “>” & G1)  
+       Counts cells greater than the value in G1.  
+   • Dates  
+     – COUNTIF(H1:H100, “>” & DATE(2025,1,1))  
+       Counts dates after Jan 1, 2025.  
+     – Can also reference a cell: “>” & A1 where A1 holds a date.
+
+4. Special Behaviors  
+   • Blanks vs. non‑blanks  
+     – COUNTIF(A1:A10, “”) counts empty cells.  
+     – COUNTIF(A1:A10, “<>”) counts cells that are not empty.  
+   • Mixed data types  
+     – Numbers in quotes (e.g. “5”) are treated as text, not numeric.  
+   • Logical values and errors  
+     – COUNTIF will ignore TRUE, FALSE, and error values unless they match the criteria exactly.  
+   • Whole‑column ranges (e.g. K:K)  
+     – Scans all 1,048,576 rows; includes blank cells in the count.  
+     – Use with care on very large sheets (performance).
+
+5. Common Uses  
+   • Count specific status  
+     – COUNTIF(StatusRange, “Completed”)  
+   • Count above/below thresholds  
+     – COUNTIF(ScoreRange, “>=80”)  
+     – COUNTIF(ScoreRange, “<50”)  
+   • Partial text matching  
+     – COUNTIF(NameRange, “Mc*”) finds names starting with “Mc”.  
+   • Compare to another cell  
+     – COUNTIF(DateRange, “<” & DeadlineCell)  
+   • Unique‑value test  
+     – COUNTIF($K:$K, K10)=1 returns TRUE if K10 is unique in column K.
+
+6. Locking References  
+   • $A$1:$A$10 locks both column & row (never shifts)  
+   • A$1 locks row only (column shifts when copying across)  
+   • $A1 locks column only (row shifts when copying down)  
+   • $K:$K locks entire column K  
+   • $K$10:$K$17 locks block K10–K17  
+
+7. Relative vs. Absolute Ranges  
+   • Relative range (K10:K17) will “drift” when copied down (→ K11:K18, K12:K19, etc.)  
+   • Use absolute ranges ($K$10:$K$17 or $K:$K) to keep the lookup area fixed  
+
+8. Multiple Criteria  
+   • Use COUNTIFS for AND logic:  
+     COUNTIFS(Range1, Criteria1, Range2, Criteria2, …)  
+   • For OR logic, combine multiple COUNTIFs or use SUMPRODUCT
+
+9. Tips  
+   • Always enclose operators (>, <, <>) in quotes and concatenate with & for cell refs.  
+   • Use wildcards (*, ?) for flexible text matches.  
+   • When testing uniqueness, include a non‑blank check:  
+     =AND(K10<>"", COUNTIF($K:$K, K10)=1)  
+   • Keep ranges tight (avoid entire columns) for better performance.  
+
+We can use =ISODD(any cell of the selected area) to allow only odd values across the selected area
+Same goes for =ISEVEN()
+Similarly =ISTEXT(any cell of the selected area) can be used to only allow texts
+Same goes for =ISNUMBER()
+
+- Pivot Tables: Create, Grouping, Calculated Fields, Refresh, Slicers:
+
+Quick Guide: Introduction to Pivot Tables in Excel
+
+1. What Is a Pivot Table?  
+   • An interactive summary tool that automatically aggregates, analyzes, and presents large data sets.  
+   • Lets you “pivot” (re‑arrange) rows and columns to see different perspectives.
+
+2. When to Use Pivot Tables  
+   • You have a detailed table of records (e.g., sales transactions, survey responses).  
+   • You need quick totals, averages, counts, or subgroup analyses by category.  
+   • You want an easy drag‑and‑drop interface instead of complex formulas.
+
+3. Basic Components  
+   • **Rows area**: Fields you want listed down the side (e.g., Salesman, District).  
+   • **Columns area**: Fields you want across the top (e.g., Month, Item).  
+   • **Values area**: Numeric fields to summarize (e.g., Sales TK) — default is “Sum,” can change to “Count,” “Average,” etc.  
+   • **Filters area**: Fields to filter the entire report (e.g., Year, Region).
+
+4. Creating a Pivot Table  
+   1. Select any cell in your data table.  
+   2. Go to **Insert → PivotTable**.  
+   3. Choose where to place it (new worksheet or existing).  
+   4. Click **OK**.
+
+5. Building the Layout  
+   • Drag fields from the Field List into Rows, Columns, Values, and Filters.  
+   • Rearrange fields to change the view.  
+   • Right‑click a Value and choose **Value Field Settings** to switch from Sum to Count, Average, Min, Max, etc.
+
+6. Common Analyses  
+   • **Total sales by salesman**: Rows = Salesman; Values = Sum of Sales TK.  
+   • **Sales by month and district**: Rows = Month; Columns = District; Values = Sum of Sales TK.  
+   • **Count of transactions by item**: Rows = Item; Values = Count of Item.
+
+7. Tips & Tricks  
+   • **Refresh** after data changes: Right‑click PivotTable → Refresh.  
+   • **Group dates**: Right‑click a Date/Month field → Group → choose Years, Quarters, Months.  
+   • **Show % of total**: Value Field Settings → Show Values As → % of Grand Total or % of Row/Column Total.  
+   • **PivotChart**: Click inside PivotTable → PivotChart for dynamic charts.  
+   • **Slicers** (Excel 2010+): Insert → Slicer to add clickable filters.
+
+8. Keep in Mind  
+   • Source data should have no blank header names and no completely blank rows/columns.  
+   • Use an Excel Table (Insert → Table) as your source to allow dynamic range growth.  
+   • PivotTables do not automatically update when you add new columns—refresh and ensure the source range covers them.
+
+Keep this cheat‑sheet handy next time you need to slice and dice your data in seconds!  
+
+
