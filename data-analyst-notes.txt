@@ -461,4 +461,436 @@ Quick Guide: Introduction to Pivot Tables in Excel
 
 Keep this cheat‑sheet handy next time you need to slice and dice your data in seconds!  
 
+PivotTable Options (General)
+
+1. Accessing PivotTable Options  
+   • Right‑click anywhere in the PivotTable → PivotTable Options…  
+   • Ribbon: PivotTable Analyze (or Options) → Options  
+
+2. Overview of Tabs  
+   PivotTable Options dialog has multiple tabs—each controls a different aspect of how your pivot behaves and appears.
+
+3. Layout & Format Tab  
+   • **Layout**  
+     – “Autofit column widths on update”  
+         • When checked, columns resize to fit contents whenever you refresh.  
+     – “Preserve cell formatting on update”  
+         • Keeps your manual formatting intact after a refresh.  
+     – “Merge and center items with labels”  
+         • Merges duplicate row/column labels for a cleaner look.  
+     – “Enable show details”  
+         • Allows double‑click on a value cell to drill‑down into its underlying data.  
+   • **Format**  
+     – “For empty cells show:”  
+         • Specify text or zero for blank result cells.  
+     – “Display error values as:”  
+         • Enter text to replace #DIV/0!, #N/A, etc.  
+     – “Classic PivotTable layout (enables dragging of fields in the grid)”  
+         • Reverts to pre‑2007 style where you can place fields directly in the table.
+
+4. Totals & Filters Tab  
+   (See your “Totals & Filter” quick guide—controls subtotals, grand totals, and multi‑filter options.)
+
+5. Display Tab  
+   • “Show expand/collapse buttons”  
+     – Toggles the +/- icons for grouping levels.  
+   • “Display field captions and filter drop‑downs”  
+     – Shows or hides the field headers and filter arrows.  
+   • “Display context tooltips”  
+     – Shows cell‑description tooltips on hover.  
+   • “Show properties in tooltip”  
+     – Includes field and item metadata in the tooltip.  
+   • “Show Drilled‑Down Items”  
+     – Controls visibility of underlying detail after double‑click.
+
+6. Printing Tab  
+   • “Print row and column headers”  
+     – Repeats row labels on each printed page.  
+   • “Repeat row labels”  
+     – Prints each item label on every row, not just the first in a group.  
+   • “Print filter fields”  
+     – Includes report filter fields in the printout header.  
+   • “Page break options”  
+     – Inserts manual or automatic page breaks for large pivot layouts.
+
+7. Data Tab  
+   • “Refresh data when opening the file”  
+     – Automatically updates pivot from its source at open.  
+   • “PivotTable Data Source”  
+     – Shows or lets you change the source range or connection.  
+   • “Number of items to retain per field”  
+     – Automatic / None / Max (controls cache size for old items).  
+   • “Enable background refresh” (for external connections)  
+     – Lets you work while data refreshes.  
+   • “Save source data with file”  
+     – Stores a copy of the raw data in the workbook for offline drill‑downs.
+
+8. Alt Text Tab  
+   • **Title**  
+     – Short identifier for accessibility.  
+   • **Description**  
+     – Longer explanation of what the PivotTable shows and how it’s used.
+
+9. Best Practices & Tips  
+   • **Turn off** “Autofit column widths on update” if you’ve manually sized columns.  
+   • Use **“Preserve cell formatting”** before applying custom number formats or colors.  
+   • Enable **background refresh** for large external data sources to avoid UI freezes.  
+   • Limit **cached items** for fields with high cardinality to reduce file size.  
+   • Always set **Alt Text** for accessibility and clear documentation.
+
+Keep this guide handy to tweak your PivotTable’s behavior, appearance, and performance—without hunting through every menu each time!
+
+PivotTable Options – Layout & Format
+
+1. Accessing the Dialog  
+   • Right‑click inside the PivotTable → PivotTable Options… → Layout & Format tab  
+   • Or Ribbon: PivotTable Analyze (or Options) → Options → Layout & Format
+
+2. Layout Settings  
+   • Autofit column widths on update  
+     – When checked, Excel resizes PivotTable columns to fit new data when you Refresh.  
+     – Uncheck to preserve your manual column widths.  
+   • Preserve cell formatting on update  
+     – Keeps any custom fonts, colors, number formats, or cell borders you apply—even after Refresh.  
+   • Merge and center cells with labels  
+     – Combines identical item labels into one merged cell for a cleaner look.  
+     – Unmerge to show each row label in its own cell.  
+   • Display field captions and filter drop‑downs  
+     – Toggles the header row with field names and the little filter arrows on/off.  
+   • For empty cells show: ___  
+     – Enter text (e.g. “0” or “N/A”) to display instead of a blank.  
+   • Display error values as: ___  
+     – Replace error codes (#DIV/0!, #N/A, etc.) with custom text.  
+   • Show items with no data on rows/columns  
+     – Include items that exist in the field’s source but have no matching records in the current filter context.  
+   • Classic PivotTable layout (enables dragging fields in grid)  
+     – Switches to pre‑2007 layout where you can place and move fields directly inside the table grid rather than in the Field List.  
+   • Enable show details  
+     – Allows you to double‑click a summary value cell to see the underlying source rows in a new sheet.
+
+3. Format Settings  
+   • Autofit row heights on update  
+     – (If available) Resizes row height to fit wrapped text when refreshing.  
+   • Preserve formatting of number cells  
+     – Keeps your numeric formatting (currency, percentages, decimals) intact on refresh.  
+   • Use built‑in PivotTable style  
+     – Choose or change the overall style (banded rows/columns, header colors) from the Design tab rather than custom formatting.
+
+PivotTable Options – Totals & Filters
+
+1. Accessing PivotTable Options  
+   • Right‑click anywhere in the PivotTable → PivotTable Options…  
+   • Ribbon: PivotTable Analyze (or Options) → Options (leftmost button)  
+
+2. Totals & Filters Tab (in PivotTable Options dialog)  
+   This tab controls how subtotals and grand totals behave, and how filters are applied.
+
+   A. Subtotals  
+      • Do “Automatic” subtotals: Excel applies the default (SUM) subtotal under each group.  
+      • Do “None”: turn off all subtotals.  
+      • Do “Custom...”: choose which fields show subtotals and pick functions (SUM, COUNT, AVERAGE, etc.).  
+
+   B. Grand Totals  
+      • For Rows and Columns:  
+         – Show grand totals for rows only  
+         – Show grand totals for columns only  
+         – Show grand totals for both  
+         – Off for both (no grand totals anywhere)  
+
+   C. Filters  
+      • “Allow multiple filters per field”  
+         – Enables you to apply more than one Label or Value filter to the same field.  
+      • “Merge and center cells with labels”  
+         – When filtering hides items, this option merges remaining label cells for visual clarity.  
+
+3. Field‑Level Totals & Filters (Ribbon / Field Settings)  
+   For each Row or Column field you can override global settings:
+
+   A. Subtotals & Filters in Field Settings  
+      1. Right‑click a field name in the Row/Column area → Field Settings…  
+      2. Subtotals & Filters tab allows:  
+         – Subtotal options: Automatic, None, or Custom Function list  
+         – Filter options:  
+             • Label Filters (e.g. Begins With, Does Not Equal)  
+             • Value Filters (e.g. Top 10 Items, Greater Than)  
+
+   B. Changing Subtotal Function  
+      • In Custom Subtotals: select one or more functions (Sum, Count, Average, Max, Min, etc.).  
+
+4. Using Report Filters vs. Slicers  
+   • Report Filter area (Filter Field):  
+     – Drag a field into the “Filters” box in the Field List.  
+     – Displays above the PivotTable as a dropdown—select one or multiple items.  
+   • Slicers (Excel 2010+):  
+     – Insert → Slicer after selecting PivotTable.  
+     – Visual, clickable buttons; can format color and style.  
+
+5. Label & Value Filters (Row/Column Fields)  
+   • Label Filters (text fields in Row/Column):  
+     – Equals, Does Not Equal, Begins With, Ends With, Contains, Does Not Contain, Greater Than, Less Than (lexical).  
+   • Value Filters (numeric fields in Row/Column):  
+     – Top 10, Above/Below Average, Greater Than, Less Than, Between, Equals, Does Not Equal.
+
+6. Turning Off Filters & Totals Quickly (Design Tab)  
+   • Design → Subtotals  
+     – Do Not Show Subtotals / Show All Subtotals at Top/Bottom of Group  
+   • Design → Grand Totals  
+     – On for Rows and Columns / On for Rows Only / On for Columns Only / Off for Rows and Columns  
+   • Design → Report Layout  
+     – Show in Tabular Form (forces subtotals below; better for viewing)  
+     – Show in Outline Form  
+     – Show in Compact Form (default)  
+
+7. Best Practices & Tips  
+   • Disable unnecessary subtotals/grand totals to reduce clutter if you only need a specific summary.  
+   • Use Custom Subtotals sparingly—too many functions slow recalculation.  
+   • Use “Allow multiple filters per field” to refine multi‑layered filters without removing prior criteria.  
+   • Remember to Refresh after changing options or source data (PivotTable Analyze → Refresh).  
+   • Combine Report Filters with Slicers for interactive dashboards.  
+   • Lock the PivotTable position (Options → Layout & Format → Enable/Disable “Autofit column widths on update”) to keep your report layout stable.
+
+PivotTable Options – Display
+
+1. Accessing the Display Tab  
+   • Right‑click inside the PivotTable → PivotTable Options… → Display  
+   • Or on the Ribbon: PivotTable Analyze (or Options) → Options → Display
+
+2. Show Expand/Collapse Buttons  
+   • Toggles the little “+” and “–” icons next to grouped items.  
+   • When ON you can click to drill into or collapse details right in the report.  
+   • When OFF all items remain expanded or collapsed as last set, and no icons appear.
+
+3. Display Field Captions & Filter Drop‑Downs  
+   • Controls the header row above your PivotTable.  
+   • ON: shows each field name with its funnel icon for filtering.  
+   • OFF: hides headers and arrows for a cleaner look—use only when no further filtering is needed.
+
+4. Display Context Tooltips  
+   • When hovering over a value cell, a small popup shows the field path (e.g., “Region > Month > Sales”).  
+   • Helps you confirm which row/column fields and items produced that number.  
+   • Turn OFF to reduce on‑screen clutter if you’re already familiar with your layout.
+
+5. Show Properties in Tooltip  
+   • Extends the context tooltip to include item metadata (like source cell, record count, custom properties).  
+   • Useful when you’ve attached additional attributes to items via OLAP or Data Model fields.  
+   • OFF for simpler tooltips showing only field/item names.
+
+6. Show Drilled‑Down Items  
+   • Controls whether double‑clicking a summary cell automatically creates a new sheet with all underlying detail rows.  
+   • ON: double‑click opens “show details” sheet.  
+   • OFF: double‑click does nothing—prevents accidental drill into very large tables.
+
+7. Show Context Menu  
+   • ON: right‑clicking a PivotTable cell shows the full PivotTable context menu (refresh, field settings, group, etc.).  
+   • OFF: limits right‐click to standard cell menu—locks the PivotTable structure.
+
+8. Show Filter Fields per Column/Row  
+   • When using multiple row or column fields, this ensures each field has its own filter arrow in the header.  
+   • OFF can tidy up space by showing only the top‐level field’s arrow.
+
+9. Practical Tips  
+   • Disable expand/collapse icons if your audience may be confused by them.  
+   • Hide captions and drop‑downs in a finalized report to prevent accidental changes.  
+   • Use context tooltips during design; turn them off in a published dashboard for a cleaner look.  
+   • Lock down “drill‑down” if your source data is huge to avoid massive new sheets.  
+
+PivotTable Options – Printing
+
+1. Accessing the Printing Tab  
+   • Right‑click inside the PivotTable → PivotTable Options… → Printing  
+   • Or on the Ribbon: PivotTable Analyze (or Options) → Options → Printing
+
+2. Print Row and Column Headers  
+   • ON: repeats row labels on each printed page so you always know which category each row belongs to.  
+   • OFF: prints labels only where they first appear (default Excel behavior).
+
+3. Repeat Row Labels  
+   • ON: prints the row field’s item label on every single row, not just the first row of each group.  
+     – Useful when exporting to reports or PDFs so each line is self‑contained.  
+   • OFF: shows the label only at the start of each grouped section.
+
+4. Print Filter Fields  
+   • ON: includes any Report Filter fields (and their selections) at the top of each printed page.  
+     – Helps readers know which filters were applied when viewing printed reports.  
+   • OFF: omits filter settings from the printout.
+
+5. Print Page Field Labels  
+   • ON: prints the names of page (report) filter fields above the PivotTable.  
+   • OFF: suppresses these headings to save space.
+
+6. Page Break Options  
+   • Automatic Page Breaks  
+     – Excel inserts page breaks based on your current page size, margins, and PivotTable layout.  
+   • Manual Page Breaks  
+     – You can insert your own breaks: Page Layout → Breaks → Insert Page Break.  
+   • Keep Page Breaks  
+     – ON: preserves manual breaks even after refreshing or changing the PivotTable layout.  
+     – OFF: Excel may move or remove manual breaks on update.
+
+7. Fit to Page Settings  
+   • Adjust in Page Layout → Scale to Fit:  
+     – Width/Page(s): fit the PivotTable to a set number of pages wide.  
+     – Height/Page(s): fit to a set number of pages tall.  
+   • Useful when printing wide PivotTables.
+
+8. Print Gridlines and Headings  
+   • In Excel’s Page Layout tab (not in Pivot Options), you can choose to print cell gridlines and row/column headings.  
+   • TIP: Toggle these on for more spreadsheet‑like appearance, or off for a cleaner look.
+
+9. Practical Tips  
+   • Preview before printing: File → Print to check pagination.  
+   • Use “Repeat Row Labels” in tabular form reports so each line shows its category.  
+   • Include filter settings on printed pages when sharing with stakeholders.  
+   • Lock manual page breaks if your report layout is final.  
+   • Combine with “Autofit column widths” (Layout & Format tab) for best print fitting.
+
+PivotTable Options – Data
+
+1. Accessing the Data Tab  
+   • Right‑click inside the PivotTable → PivotTable Options… → Data  
+   • Or on the Ribbon: PivotTable Analyze (or Options) → Options → Data
+
+2. Refresh Control  
+   • “Refresh data when opening the file”  
+     – ON: PivotTable automatically updates from its source each time you open the workbook.  
+     – OFF: Requires manual Refresh (PivotTable Analyze → Refresh or right‑click → Refresh).
+
+3. Background Refresh (for external connections)  
+   • ON: Allows Excel to refresh the PivotTable’s external data in the background so you can continue working.  
+   • OFF: Excel waits until the refresh completes before you can do anything else.
+
+4. Save Source Data with File  
+   • ON: Embeds a copy of all the PivotTable’s source records in the workbook.  
+     – Enables offline “Show Details” drilling even if the original data isn’t available.  
+     – Increases file size.  
+   • OFF: Doesn’t store source data—drill‑down only works if the source is accessible.
+
+5. Number of Items to Retain per Field  
+   • Determines how many distinct item names Excel caches for each field.  
+     – Automatic: keeps old items even if they’re filtered out, useful for consistent pivot layout.  
+     – None: drops all unused items from the cache, reduces file size but loses old items.  
+     – Max: specify a custom number of items to retain.  
+   • Use None or a low Max to minimize file size when your source constantly changes.
+
+6. Enable Drill‑Down (“Show Details”)  
+   • Controls whether double‑clicking a summary cell reveals its underlying records in a new sheet.  
+   • If you stored source data with the file, drill‑down works offline.  
+   • Disable if you want to prevent accidental generation of large detail sheets.
+
+7. PivotTable Data Source  
+   • Button to view or change the source range, table, or OLAP/PowerPivot connection.  
+   • Ensures your PivotTable is pointing at the correct cells, table, or external data model.
+
+8. Retain Formatting and Sorting on Update  
+   • Optionally keep number formats, cell styles, and manual sort orders intact when the pivot refreshes.  
+   • Uncheck to reset formatting and sorting to default each time you refresh.
+
+9. Practical Tips  
+   • Turn ON “Refresh when opening” for dashboards that must always show current data.  
+   • Use Background Refresh with large external queries to avoid UI freezes.  
+   • Save source data only if you need offline drill‑down—otherwise, turn it OFF for smaller file size.  
+   • Choose “None” for items to retain if your fields have high cardinality (many unique values).  
+   • Regularly review and clear old cache items (PivotTable Analyze → Options → Data → Clear Old Items).
+
+PivotTable Tools – Group
+
+1. Accessing the Group Feature  
+   • Select one or more items in a Row or Column area of the PivotTable.  
+   • Right‑click → Group…  
+   • Or on the Ribbon: PivotTable Analyze → Group Field (in the Active Field group)
+
+2. Manual Grouping of Items  
+   • Select multiple contiguous items (e.g. “East”, “North”).  
+   • Group… creates a new “Group1” field containing just those items.  
+   • Rename the group in the PivotTable Fields list to something meaningful (e.g. “Regions A”).  
+   • You can group existing groups again for nested hierarchy.
+
+3. Date/Time Grouping  
+   • Select a single date field in Rows or Columns.  
+   • Group… opens options for:  
+     – **By Months, Quarters, Years, Days, Hours, Minutes, Seconds**  
+     – Check multiple levels for multi‑level grouping (Year + Quarter + Month).  
+   • Click OK to insert each grouping level as its own field.  
+   • Use the +/– icons to expand or collapse date hierarchy.
+
+4. Numeric Grouping  
+   • Select one or more numeric items (e.g. ages, sales values) or the entire numeric field.  
+   • Group… lets you define:  
+     – **Starting at:** the minimum number in your groups  
+     – **Ending at:** the maximum number  
+     – **By:** interval size (e.g. group ages by 10 → 0–9, 10–19, etc.)  
+   • Excel builds bins of equal width; you can rename the bin labels.
+
+5. Ungrouping  
+   • To remove a group:  
+     – Select any item in that group → Right‑click → Ungroup  
+   • For date/numeric groups, Ungroup restores the original field.  
+   • For manual groups, Ungroup deletes the group field entirely.
+
+6. Group Settings & Options  
+   • In the Group dialog you can:  
+     – Adjust Start, End, and By values for numeric bins.  
+     – Check “By” units for date groupings.  
+   • After grouping, fields appear under the original field in the Field List; you can reorder or remove them.  
+   • To rename a group (for clarity), select the group name in the Row/Column labels, press F2, and type a new label.
+
+7. Multiple Group Levels  
+   • You can apply numeric or date grouping on top of manual grouping for multi‑layer analysis.  
+   • Drill‑down with expand/collapse buttons to move through levels.
+
+8. Best Practices & Tips  
+   • Always sort your source data chronologically or numerically before grouping to avoid unexpected bin boundaries.  
+   • Use meaningful group names—double‑click the default “Group1” in Row labels to rename.  
+   • Limit bin sizes to useful ranges; too many tiny bins clutter the report.  
+   • Remember to Refresh the PivotTable after changing source data; grouped fields retain settings.  
+   • Use Ungroup when you need to adjust group definitions—then reapply grouping with new parameters.
+
+PivotTable Tools – Sort
+
+1. Accessing Sort Controls  
+   • Click the drop‑down arrow next to any Row or Column label in your PivotTable.  
+   • Or on the Ribbon: PivotTable Analyze → Sort (in the Active Field group) → Sort A to Z / Z to A / More Sort Options.
+
+2. Sort by Label (Item Name)  
+   • **Ascending (A → Z)**: orders items alphabetically or numerically low → high.  
+   • **Descending (Z → A)**: orders items reverse alphabetical or high → low.  
+   • Applies to the selected field only; other fields remain in their current order.
+
+3. Sort by Value  
+   • In the drop‑down arrow choose **More Sort Options…**  
+     – Select **“Sort by Value”** instead of by item name.  
+     – Choose the **Summary Value** (Sum of Sales, Count of Records, etc.).  
+     – Pick Ascending or Descending.  
+   • Useful for ranking items by total sales, counts, averages, etc., rather than name.
+
+4. Manual Drag‑and‑Drop Sorting  
+   • In **Classic PivotTable layout** (Layout & Format → Classic Layout), you can drag Row labels up or down to any order.  
+   • Or in the Field List under Rows/Columns, drag items within a field to reorder them manually.
+
+5. Custom List Sorting  
+   • Excel custom lists let you sort by a preset order (e.g. Jan, Feb, Mar… or High, Medium, Low).  
+   • Go to PivotTable Analyze → Sort → More Sort Options → More Options → **“Use custom lists when sorting”**.  
+   • Ensure your custom list is defined in File → Options → Advanced → Edit Custom Lists.
+
+6. Sorting Multiple Fields  
+   • If you have nested Row fields, sort the **top field** first, then sort each **sub‑field** individually.  
+   • Use the drop‑down on each field’s label to set its own sort order.
+
+7. Sort Options Dialog  
+   • **More Sort Options…** from the label drop‑down opens the dialog:  
+     – Specify **Sort type**: Manual, Ascending by label, or Descending by value.  
+     – Click **More Options…** to sort items with no data at the bottom, or to sort left‑to‑right for column fields.
+
+8. Persistent Sorting on Refresh  
+   • In PivotTable Options → Layout & Format, uncheck **“Autofit column widths on update”** to keep manual widths.  
+   • In PivotTable Options → Data, set **“Number of items to retain per field”** to avoid reintroducing old items that could disrupt sort.
+
+9. Best Practices & Tips  
+   • Always sort the **highest‑level** field first to establish overall order.  
+   • Use **Value sort** for ranking rather than alphabetical label sort.  
+   • Combine **custom lists** with manual groups for industry‑specific orders.  
+   • Refresh after changing source data but verify sort order remains correct—reapply if needed.  
+   • For large pivot tables, avoid too many manual reorders; use custom lists or value sorts for consistency.
+
+
 
