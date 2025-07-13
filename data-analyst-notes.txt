@@ -892,5 +892,155 @@ PivotTable Tools – Sort
    • Refresh after changing source data but verify sort order remains correct—reapply if needed.  
    • For large pivot tables, avoid too many manual reorders; use custom lists or value sorts for consistency.
 
+PivotTable Tools – Data Group
 
+1. Where to Find It  
+   • Click anywhere in your PivotTable → Ribbon: PivotTable Analyze (or Options) → Data group (middle of the tab)  
+
+2. Refresh  
+   • **Refresh** (single icon)  
+     – Updates the active PivotTable from its current source (re‑reads any changed cell values in the source range or table).  
+     – Shortcut: Select the PivotTable and press Alt + F5.  
+   • **Refresh All**  
+     – Updates every PivotTable and data connection in the entire workbook.  
+     – Shortcut: Ctrl + Alt + F5.  
+
+3. Change Data Source  
+   • Opens the dialog to redefine the PivotTable’s source:  
+     – Switch from a static range (e.g. A1:D100) to an Excel Table (dynamic) or vice versa.  
+     – Expand or shrink the range if your data size has changed.  
+     – Change connection string if you’re using an external data model/OLAP source.  
+   • Best Practice: Use an Excel Table (Insert → Table) so the Pivot auto‐expands when you add rows.
+
+4. Connections (Existing Connections)  
+   • Opens the **Workbook Connections** dialog:  
+     – Lists all external data sources (databases, OLAP, OData feeds) and data model queries.  
+     – Allows you to **Add**, **Remove**, or **Edit** connection properties (e.g. authentication, command text).  
+     – Control background refresh and caching options per connection.  
+
+5. Data Source Settings (for Data Model / Power Pivot)  
+   • If your Pivot uses the Data Model, click **Data Source Settings** under Connections:  
+     – Manage which tables and relationships feed the model.  
+     – Change Privacy Levels, Command Timeout, or Fast Data Load options.  
+
+6. Clear  
+   • While in many versions Clear lives under its own group, sometimes it’s included here:  
+     – **Clear Filters**: removes all report‐level & field filters.  
+     – **Clear All**: resets the PivotTable layout and filters back to blank.  
+
+7. Select  
+   • Again, occasionally grouped here—enables quick selection of:  
+     – **Entire PivotTable**  
+     – **Labels** only  
+     – **Values** only  
+   • Useful before copying, formatting, or clearing parts of the PivotTable.
+
+8. Practical Tips  
+   • **Always Refresh** after changing source data. If you skip this, the Pivot won’t reflect updates.  
+   • Use **Refresh All** when you have multiple Pivots or external queries.  
+   • **Change Data Source** before adding new fields—prevents orphaned or misaligned data.  
+   • Review **Connections** to disable unused queries and improve workbook performance.  
+   • Convert raw data ranges to Tables to let your Pivot automatically grow without manual “Change Data Source.”
+
+PivotTable Tools – Actions Group
+
+1. Location  
+   • On the Ribbon: PivotTable Analyze (or Options) → Actions group (usually left side)
+
+2. Field List  
+   • Toggles the PivotTable Field List pane on/off.  
+   • Field List shows available fields and layout areas (Filters, Columns, Rows, Values).  
+   • Shortcut: Alt + J + T + I (in sequence on Windows).
+
+3. Expand/Collapse Field  
+   • **Expand Field**  
+     – Adds “+” buttons next to items in a selected row/column field, showing nested detail.  
+     – Right‑click an item → Expand/Collapse → Expand Entire Field to open all items.  
+   • **Collapse Field**  
+     – Hides lower-level details under a collapsed item (“–” button).  
+     – Right‑click an item → Expand/Collapse → Collapse Entire Field.
+
+4. Clear  
+   • **Clear All**  
+     – Removes all fields from Filters, Rows, Columns, and Values—resets the PivotTable blank.  
+   • **Clear Filters**  
+     – Clears only any applied filters on the selected field or the entire report.  
+   • Shortcut: Right‑click a field label → Remove Field.
+
+5. Select  
+   • **Entire PivotTable**  
+     – Highlights the full PivotTable region; useful before formatting or copying.  
+   • **Labels**  
+     – Selects just the row and column headers (item labels) for quick formatting.  
+   • **Values**  
+     – Selects only the data values area (no headers) for number formatting.  
+   • Shortcut: PivotTable Analyze → Select → (Choose option)
+
+6. Move PivotTable  
+   • Opens the “Move PivotTable” dialog:  
+     – Choose a new location (new worksheet or specific cell in an existing sheet).  
+   • Useful to reorganize dashboards without rebuilding the Pivot.
+
+7. Practical Tips  
+   • Hide the Field List when you’re done designing to maximize screen space.  
+   • Use Expand/Collapse to present multiple summary levels without manual grouping.  
+   • Clear filters quickly to restore full data view before a new analysis.  
+   • Select Labels or Values to apply distinct formatting (e.g., bold headers vs. number formats).  
+   • Move your PivotTable to a fresh sheet when embedding into a report layout.
+
+PivotChart Tools
+
+1. Inserting a PivotChart  
+   • Select any cell in your PivotTable or source range.  
+   • Ribbon: PivotTable Analyze → PivotChart → choose chart type (Column, Line, Pie, etc.).  
+   • Or Insert → PivotChart if starting from raw data (automatically creates linked PivotTable).
+
+2. PivotChart Fields Pane  
+   • Appears alongside your chart, mirroring the PivotTable Field List.  
+   • Drag fields into:  
+     – **Axis (Categories):** defines the X‑axis groupings (e.g. Month, Region).  
+     – **Legend (Series):** splits data series (e.g. Product, Salesman).  
+     – **Values:** numeric data to plot (e.g. Sum of Sales, Count of Orders).  
+     – **Filters:** report‑level filters that apply to both chart and table.
+
+3. Dynamic Interaction  
+   • **Filtering:** click a chart element (bar, slice) → context menu → Filter → Hide Selected/Show Only Selected.  
+   • **Drill‑down:** double‑click a data point to drill into underlying Pivot levels (if enabled).  
+   • **Slicers & Timelines:** insert to control both PivotTable and PivotChart simultaneously.
+
+4. Chart Tools Context Tabs  
+   When the PivotChart is selected, two new ribbon tabs appear:  
+   • **Chart Design:**  
+     – Change Chart Type → switch to a different visualization.  
+     – Switch Row/Column → swap series and category axes.  
+     – Select Data → adjust source fields without altering the PivotTable.  
+     – Quick Layout & Styles → apply built‑in layouts and color schemes.  
+   • **Format:**  
+     – Shape Styles → customize chart area, plot area, and series formatting.  
+     – WordArt Styles & Text Fill → format titles and data labels.  
+     – Arrange → control layering, alignment, and grouping of chart elements.
+
+5. Synchronization with PivotTable  
+   • Any change in the PivotTable (filters, grouping, sorting) immediately updates the PivotChart.  
+   • Refreshing the PivotTable also refreshes the chart data.
+
+6. Customizing Data Series  
+   • Right‑click a series → Format Data Series →:  
+     – Change series chart type (e.g. mix column & line).  
+     – Adjust gap width, overlap, or plot on secondary axis.  
+   • Add Data Labels → show values, percentages, or custom text on each data point.
+
+7. Axis & Legend Configuration  
+   • Axis Titles & Chart Title → add or edit text for clarity.  
+   • Legend Position → move to top, bottom, left, right, or hide entirely.  
+   • Axis Options → scale (min/max), tick marks, label position, number format.
+
+8. Practical Tips  
+   • Use **Combo Charts** (e.g. column + line) to compare different metrics.  
+   • Leverage **Secondary Axis** for series with different scales.  
+   • Apply **Slicers** for intuitive, clickable filtering of chart data.  
+   • Consistently format PivotCharts in dashboards for a unified look.  
+   • Remember: resizing or moving the PivotTable may reposition the linked PivotChart.
+
+Keep this guide handy to create and customize PivotCharts that dynamically reflect your PivotTable analyses!
 
