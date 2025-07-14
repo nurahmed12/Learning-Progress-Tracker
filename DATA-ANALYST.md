@@ -3,32 +3,32 @@
 ## Progress ( 🟢 = Completed, ⚪️ = Pending )
 
 ## Stage 1: Excel & Spreadsheets (Weeks 1–2)
-- 🟢 Introduction (Worksheets, Ribbon (hide, unhide), Formula Bar (hide, unhide), Gridlines, Name Box, Manual Calculation, Auto Apply, Boolean Comparisons, Select All, Navigate to the End, Alignment, Scrolling Bar, Multiple Sheets and Navigation, Zoom, Font Basics, Status Bar, Page Layout, Save | Create | Open, Print)
+- 🟢 Introduction (Worksheets, Ribbon (hide, unhide), Formula Bar (hide, unhide), Gridlines, Name Box, Manual Calculation, Auto Apply, Boolean Comparisons, Select All, Navigate to the End Alignment, Scrolling Bar, Multiple Sheets and Navigation, Zoom, Font Basics, Status Bar, Page Layout, Save | Create | Open, Print)
 - 🟢 Introduction (Cut, Copy, Paste, Format Painter, Clear All)
-- 🟢 Font Group (All Options)
-- 🟢 Number Group (Alignment, Wrap Text, Merge & Center)
-- 🟢 Number Group (Currency, Accounting, Currency VS Accounting)
-- 🟢 Number Group (Short Date, Long Date, Date, Time, Date & Time)
-- 🟢 Number Group (Percentage, Fraction, Scientific, Original Number)
-- 🟢 Styles Group Conditional Formatting (Highlight Cells Rules)
-- 🟢 Styles Group Conditional Formatting (Top and Botton Rules)
-- 🟢 Styles Group Conditional Formatting (Data Bars & Color Scales)
-- 🟢 Styles Group Conditional Formatting (Icon Sets, and New Rules)
-- 🟢 Styles Group (Format as Table)
-- 🟢 Styles Group (Cell Styles)
-- 🟢 Cells Group (Insert and Delete)
-- 🟢 Cells Group (Format Option)
+- 🟢 Font (All Options)
+- 🟢 Number (Alignment, Wrap Text, Merge & Center)
+- 🟢 Number (Currency, Accounting, Currency VS Accounting)
+- 🟢 Number (Short Date, Long Date, Date, Time, Date & Time)
+- 🟢 Number (Percentage, Fraction, Scientific, Original Number)
+- 🟢 Styles: Conditional Formatting (Highlight Cells Rules)
+- 🟢 Styles: Conditional Formatting (Top and Botton Rules)
+- 🟢 Styles: Conditional Formatting (Data Bars & Color Scales)
+- 🟢 Styles: Conditional Formatting (Icon Sets, and New Rules)
+- 🟢 Styles: (Format as Table)
+- 🟢 Styles: (Cell Styles)
+- 🟢 Cells (Insert and Delete)
+- 🟢 Cells (Format Option)
 - 🟢 Formulas & Functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND, and More Functions 
 - 🟢 Fill Option (Up, Down, Left, Right, Across Worksheet) 
 - 🟢 Fill Option (Fill Series and Justify) 
 - 🟢 Clear Option (Clear All, Clear Formats, Clear Contents, Clear Comments) 
-- 🟢 Editing Group (Sorting) 
-- 🟢 Editing Group (Custom Sort) 
-- 🟢 Editing Group (Filter) 
-- 🟢 Editing Group (Find & Replace) 
-- 🟢 Editing Group (Find & Select (Go to & Go to Special)) 
+- 🟢 Editing (Sorting) 
+- 🟢 Editing (Custom Sort) 
+- 🟢 Editing (Filter) 
+- 🟢 Editing (Find & Replace) 
+- 🟢 Editing (Find & Select (Go to & Go to Special)) 
 - 🟢 Data Validation (Any value and Whole number) 
-- 🟢 Pivot Tables: Create, Grouping, Calculated Fields, Refresh, Slicers
+- 🟢 Pivot Tables: Create, ing, Calculated Fields, Refresh, Slicers
 - ⚪️ Logical Functions: IF, AND, OR, NOT, IFS  
 - ⚪️ Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP  
 - ⚪️ Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE  
@@ -36,7 +36,6 @@
 - ⚪️ Aggregation: SUMIFS, COUNTIFS, AVERAGEIFS  
 - ⚪️ Data Cleaning: Text to Columns, Remove Duplicates, Flash Fill    
 - ⚪️ Charts: Bar, Column, Line, Pie, Combo, Sparklines  
-- ⚪️ Data Validation & Conditional Formatting  
 - ⚪️ Basic Macros Recording  
 
 ## Stage 2: SQL Fundamentals (Weeks 3–4)
@@ -44,7 +43,7 @@
 - ⚪️ Basic Queries: SELECT, FROM, WHERE, DISTINCT  
 - ⚪️ Filtering: AND, OR, NOT, BETWEEN, IN, LIKE, IS NULL  
 - ⚪️ Sorting & Limiting: ORDER BY, LIMIT/TOP  
-- ⚪️ Aggregations: COUNT, SUM, AVG, MIN, MAX, GROUP BY, HAVING  
+- ⚪️ Aggregations: COUNT, SUM, AVG, MIN, MAX,  BY, HAVING  
 - ⚪️ Joins: INNER, LEFT, RIGHT, FULL OUTER, CROSS  
 - ⚪️ Subqueries: Correlated & Non-correlated  
 - ⚪️ Common Table Expressions (CTEs)  
@@ -59,7 +58,7 @@
 - ⚪️ Comprehensions: List, Dict, Set Comprehensions  
 - ⚪️ Pandas: DataFrame & Series Creation, Indexing, Selection  
 - ⚪️ Data Cleaning: dropna, fillna, astype, duplicate handling  
-- ⚪️ Data Manipulation: merge, join, concat, groupby, pivot_table  
+- ⚪️ Data Manipulation: merge, join, concat, by, pivot_table  
 - ⚪️ NumPy: Arrays, Broadcasting, Vectorized Operations  
 - ⚪️ String Methods, DateTime Operations in Pandas  
 - ⚪️ Exploratory Data Analysis: describe, info, value_counts  

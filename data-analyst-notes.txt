@@ -1044,3 +1044,420 @@ PivotChart Tools
 
 Keep this guide handy to create and customize PivotCharts that dynamically reflect your PivotTable analyses!
 
+PivotChart Tools – Change Chart Type
+
+1. Opening the Change‑Chart‑Type Window  
+   • Select the PivotChart, then on the ribbon click Chart Design → Change Chart Type  
+   • Or right‑click any blank area of the chart and choose Change Chart Type…
+
+2. Available Chart Categories  
+   • Column & Bar  
+     – Clustered, Stacked, 100% Stacked  
+     – Best for comparing values across categories  
+   • Line & Area  
+     – Line, Stacked Area, 100% Stacked Area  
+     – Ideal for showing trends over time or continuous series  
+   • Pie & Doughnut  
+     – Single‑series “parts‑of‑a‑whole” views  
+     – Use only when you have one data series and a few categories  
+   • Combo  
+     – Mix two chart types (e.g. Column + Line)  
+     – Check Secondary Axis to give one series its own scale  
+   • Scatter & Bubble (less common)  
+     – For true X‑Y relationships—rare in pivoted data  
+
+3. Building a Combo Chart  
+   1. In the Change Chart Type dialog, select Combo  
+   2. For each series, choose its chart type from the dropdown  
+   3. Tick Secondary Axis for series with different magnitude  
+   4. Click OK to apply and see both types combined  
+
+4. Switching Row/Column Data  
+   • On the Chart Design tab, click Switch Row/Column  
+   • Transposes your series vs. category axes—helpful if your data groups look better the other way around  
+
+5. Recommended Defaults for PivotCharts  
+   • Clustered Column for side‑by‑side category comparisons  
+   • Stacked Column/Bar to show totals plus breakdowns  
+   • Line for time‑series or continuous data  
+   • 100% Stacked to compare relative contributions across categories  
+   • Combo when you need to overlay two different metrics  
+
+6. Changing an Individual Series Type  
+   • Right‑click the specific data series → Change Series Chart Type…  
+   • Select a different chart style or assign it to the secondary axis without altering others  
+
+7. Setting Your Own Default  
+   • In Change Chart Type → All Charts → Set as Default Chart  
+   • Makes your chosen type the automatic start‑point for new PivotCharts  
+
+8. Best Practices  
+   • Arrange your pivot fields (Rows vs. Columns) before picking a chart type  
+   • Avoid 3D charts—they can distort perception of values  
+   • After changing type, verify axis scales and data labels for readability  
+   • Use combo charts judiciously; too many types can confuse viewers  
+   • Remember to refresh the PivotTable to update the chart if source fields change  
+
+PivotChart Tools – Data Group
+
+1. Refresh & Refresh All  
+   • **Refresh**  
+     – Updates the active PivotChart (and its underlying PivotTable) with any changes in the source data.  
+     – Shortcut: select the PivotChart and press Alt + F5.  
+   • **Refresh All**  
+     – Updates every PivotChart, PivotTable, and external data connection in the workbook.  
+     – Shortcut: Ctrl + Alt + F5.  
+
+2. Change Data Source  
+   • Opens the **Change PivotTable Data Source** dialog for the linked PivotTable:  
+     – Switch from a static range to an Excel Table or vice versa.  
+     – Expand/shrink the data range if you’ve added or removed rows.  
+     – For Data Model connections, lets you pick a different table or query.  
+   • Best Practice: Use a Table (Insert → Table) so your PivotChart auto‑expands with new data.
+
+3. Select Data  
+   • Opens the standard **Select Data Source** dialog for charts:  
+     – Add, remove, or edit series manually if you need to override Pivot defaults.  
+     – Switch row/column data here, independent of the PivotTable layout.  
+
+4. Edit Data  
+   • For non‑Pivot data series, **Edit Data** lets you modify the chart’s source range or cell references.  
+   • In a PivotChart context this button is usually disabled—use Change Data Source on the PivotTable instead.
+
+5. Connections (Workbook Connections)  
+   • Opens the **Connections** dialog listing all external data sources:  
+     – Add or remove OData feeds, database links, Power Query connections.  
+     – Configure background refresh, authentication, and caching per connection.  
+
+6. Practical Tips  
+   • Always **Refresh** after updating or adding source rows—your PivotChart won’t update itself otherwise.  
+   • Use **Refresh All** when multiple PivotCharts/PivotTables share the same data.  
+   • Convert your source range to a named Table to avoid manually changing the data source.  
+   • Only use **Select Data** for fine‑tuning series if your PivotChart’s defaults don’t meet your needs.  
+   • Regularly review **Connections** to disable unused queries and improve workbook performance.  
+
+PivotChart Tools – Chart Layouts, Chart Styles & Move Chart
+
+1. Chart Layouts  
+   • Access: Select the PivotChart → Chart Design → Quick Layout  
+   • Offers predefined arrangements of chart elements (titles, legends, axis labels, gridlines)  
+   • Hover over each layout preview to see dynamic repositioning before clicking  
+   • Use to instantly add/remove elements or change their placement without manual dragging  
+
+2. Chart Styles  
+   • Access: Select the PivotChart → Chart Design → Chart Styles gallery  
+   • Provides combinations of colors, backgrounds, and formatting presets  
+   • Click the down‑arrow to expand full style gallery  
+   • Use “Style” plus “Color” palettes for consistent theme matching across your workbook  
+   • Right‑click a style and choose “Set as Default Style” to make it the starting point for new charts  
+
+3. Move Chart  
+   • Access: Chart Design → Move Chart  
+   • Options:  
+     – **New sheet**: places the chart on its own worksheet (named “Chart1”, etc.)  
+     – **Object in**: embeds the chart in a specified existing worksheet and cell location  
+   • Use New sheet for full‑page dashboard views; Object in to integrate charts within data sheets  
+   • After moving, you can resize and reposition the chart container as needed  
+
+Best Practices  
+   • Use Quick Layouts to maintain consistent look across multiple charts  
+   • Align Chart Styles with your corporate or report color theme for professional polish  
+   • Move standalone charts to their own sheets when embedding in presentations or dashboards  
+   • Remember to refresh PivotTables to keep layouts and styles up to date with new data  
+
+PivotChart Tools – Chart Area, Format Selection & Reset to Match Style
+
+1. Chart Area  
+   • Click anywhere on the chart background (outside data series) to select the Chart Area.  
+   • Use this to apply formatting (fill, border, effects) to the entire chart container.  
+   • Resize handles appear when Chart Area is selected—drag to change overall chart size.  
+
+2. Format Selection  
+   • Access: Select a specific chart element (series, axis, legend, title) → right‑click → Format Selection  
+   • Opens the **Format Pane** tailored to that element’s properties (e.g. Fill & Line, Effects, Size & Properties).  
+   • Use it to:  
+     – Change series fill patterns, line weights, marker styles  
+     – Adjust axis scale, tick marks, number formats  
+     – Modify legend position, font, and border  
+     – Fine‑tune titles, data labels, and plot area appearance  
+
+3. Reset to Match Style  
+   • Access: Chart Design → Reset to Match Style  
+   • Removes all manual formatting (colors, shapes, text styles) you applied, reverting the chart to the current Chart Style theme.  
+   • Keeps your data and chart type intact while restoring uniform look across charts in your workbook.  
+
+4. Practical Tips  
+   • Always select the Chart Area first if you want to change the background or overall border.  
+   • Use Format Selection to precisely tweak only the element you need—avoid cluttering the Format Pane by starting on the correct object.  
+   • Reset to Match Style when you’ve experimented with custom formats and want to revert to a consistent corporate or report theme.  
+   • Combine Reset with a new Chart Style to quickly get a fresh, professional look.  
+
+PivotChart Tools – Picture, Shape & Text Box
+
+1. Inserting Pictures  
+   • Select the PivotChart → Chart Design → Insert Picture  
+   • Browse and choose an image (logo, watermark) to embed in the chart area  
+   • Resize and move the picture freely; use right‑click → Send to Back/Front to layer it  
+
+2. Adding Shapes  
+   • Select the PivotChart → Insert → Shapes on the Ribbon  
+   • Choose from rectangles, arrows, callouts, etc., to highlight or annotate parts of the chart  
+   • Draw the shape over the chart; use Shape Format → Shape Fill/Outline to style it  
+   • Right‑click the shape → Send to Back/Front to position it behind or in front of chart elements  
+
+3. Adding Text Boxes  
+   • Select the PivotChart → Insert → Text Box  
+   • Click and drag to draw a text box anywhere on the chart  
+   • Type your annotation, title, or note; format with Home or Text Box Tools (font, size, color)  
+   • Use Text Box Format → Align or Position to snap it to specific chart areas  
+
+4. Formatting & Layering  
+   • Use the **Selection Pane** (Home → Find & Select → Selection Pane) to manage visibility and layering order of pictures, shapes, and text boxes  
+   • Right‑click any object → Format Picture/Shape/Text Box → adjust transparency, shadow, glow, and size  
+   • Lock aspect ratio in Size & Properties to keep proportions when resizing  
+
+5. Practical Tips  
+   • Use a semi‑transparent image or shape to watermark without obscuring data  
+   • Group multiple shapes/text boxes (select → right‑click → Group) to move or format them together  
+   • Keep annotations concise—overloading the chart can reduce readability  
+   • Reset to Match Style if custom objects clash with your chart theme (Chart Design → Reset to Match Style)  
+
+PivotChart Tools – Labels Group
+
+1. Add Chart Element  
+   • Access: Select the PivotChart → Chart Design → Add Chart Element  
+   • Options include:  
+     – **Axis Titles**: add/edit primary or secondary horizontal/vertical axis labels  
+     – **Chart Title**: position above chart or overlay; type descriptive titles  
+     – **Data Labels**: show values, percentages, series names, or custom text on each point  
+     – **Data Table**: embed the underlying data grid beneath the chart (with/without legend keys)  
+     – **Gridlines**: toggle major/minor horizontal or vertical gridlines for readability  
+     – **Legend**: choose position (Top, Bottom, Left, Right) or hide entirely  
+     – **Error Bars**: add standard deviation, percentage, or custom error bars for series  
+
+2. Quick Add/Remove  
+   • Click the plus icon (+) next to the chart when selected  
+   • Check or uncheck elements (Data Labels, Axis Titles, Gridlines, Legend) for instant toggling  
+
+3. Data Labels Options  
+   • After adding, click a label → right‑click → Format Data Labels  
+   • Pane options:  
+     – **Label Contains**: Value, Series Name, Category Name, Percentage  
+     – **Label Position**: Center, Inside End, Outside End, Base, etc.  
+     – **Separator**: comma, newline, or custom character if multiple items selected  
+
+4. Axis Titles & Chart Title  
+   • Double‑click title text to format font, size, fill, and effects  
+   • Use Format Pane → Text Options for alignment, rotation, and overflow  
+   • Remove by clearing text or via Add Chart Element → Chart Title → None  
+
+5. Data Table Formatting  
+   • After adding, Format Pane → Data Table section  
+   • Options for border, font, fill color, and legend key display  
+   • Use “Show legend keys” checkbox to include color swatches next to table rows  
+
+6. Gridlines Customization  
+   • Format Pane → Gridline Options  
+   • Set line style, width, dash type, color, and transparency  
+   • Choose between major/minor and horizontal/vertical sets  
+
+7. Legend Management  
+   • Format Legend pane: Position, Text Options, Fill & Border  
+   • Drag the legend box manually to reposition or resize  
+   • Use Legend Entries (Series) list to reorder or hide individual series  
+
+8. Practical Tips  
+   • Keep chart titles concise and descriptive—avoid overly long text  
+   • Use data labels sparingly on cluttered charts—consider tooltips instead  
+   • Light or dashed gridlines improve readability without overpowering data  
+   • Embed a data table for precise value reference in reports  
+   • Manage label overlap by adjusting font size, label position, or hiding low‑value points  
+
+PivotChart Tools – Axis Group
+
+1. Axis Titles  
+   • Purpose: Label the chart axes to clearly indicate what each axis represents.  
+   • Access:  
+     – Select chart → Chart Design tab → Add Chart Element → Axis Titles  
+     – Or click the (+) button on the chart and check "Axis Titles"  
+   • Options:  
+     – Primary Horizontal  
+     – Primary Vertical  
+     – (For 3D or combo charts: Secondary Horizontal/Vertical)  
+   • Editing:  
+     – Click on the placeholder text and type your label  
+     – Customize using the Format tab (font, size, color, effects)  
+
+2. Primary Horizontal Axis  
+   • This axis typically shows categories (e.g., years, product names).  
+   • Customization Options (Right-click → Format Axis):  
+     – **Axis Type**: Text or Date  
+     – **Axis Labels**: next to axis, low, high  
+     – **Interval Between Labels**: automatic, manual  
+     – **Positioning**: on tick marks, between tick marks  
+
+3. Primary Vertical Axis  
+   • This axis usually represents values (e.g., sales, counts, percentages).  
+   • Customization Options:  
+     – **Bounds**: Set minimum and maximum values  
+     – **Major/Minor Units**: Define tick spacing  
+     – **Logarithmic Scale**: For large value ranges  
+     – **Number Format**: Currency, Percentage, etc.  
+     – **Display Units**: Thousands, Millions, etc.  
+
+4. Axis Formatting  
+   • Access via: Right-click axis → Format Axis  
+   • Format Pane Options:  
+     – **Fill & Line**: Set line color, width, dash type  
+     – **Text Options**: Font size, color, angle, alignment  
+     – **Tick Marks**: Set major/minor tick mark types (Inside, Outside, Cross)  
+     – **Label Position**: Next to Axis, Low, High, None  
+
+5. Axis Scaling  
+   • You can manually scale the axis range if auto-scaling is not ideal.  
+   • Example: Set min = 0, max = 100 if your values range from 5 to 90.  
+   • Useful for comparing charts with the same visual range.  
+
+6. Multiple Axes (Combo Charts)  
+   • Add a **Secondary Axis** for different value scales (e.g., Count vs. % Growth).  
+   • Format each axis separately. Helps when comparing disparate data types.  
+
+7. Hide/Show Axes  
+   • To hide:  
+     – Right-click axis → Format Axis → Label Position → None  
+     – Or use Add Chart Element → Axes → Uncheck axis  
+   • Useful when visual simplicity is more important than labeling  
+
+8. Tips  
+   • Always use axis titles for clarity, especially in presentations or reports  
+   • Avoid unnecessary secondary axes unless there’s a clear need  
+   • Match number formatting to the data type (e.g., % vs. currency)  
+   • Use consistent scale across charts for easy comparison  
+
+PivotChart Tools – Background Group
+
+1. Chart Area Fill  
+   • Select the chart area → Format tab → Shape Fill  
+   • Options: Solid fill, Gradient fill, Picture or texture fill, Pattern fill  
+   • Use “More Fill Colors…” for custom RGB/hex values  
+   • For image backgrounds: Shape Fill → Picture… browse and insert a watermark or logo  
+
+2. Chart Area Outline  
+   • Select the chart area → Format tab → Shape Outline  
+   • Options: No outline, Solid line (choose weight, dash type), Gradient line  
+   • Use “Weight” to adjust border thickness or “Dashes” for styled borders  
+
+3. Shape Effects  
+   • Select chart area or plot area → Format tab → Shape Effects  
+   • Sub‑options:  
+     – Shadow: Outer, Inner, Perspective shadows  
+     – Glow: Color, size, transparency controls  
+     – Soft Edges: Smooths edges with adjustable radius  
+     – Bevel: Adds depth with presets and custom width/height  
+     – 3‑D Rotation: Tilt, perspective, and lighting settings  
+   • Layer effects sparingly to maintain readability  
+
+4. Plot Area Formatting  
+   • Click inside the plot area (where the data bars/lines sit) → Format Selection → Fill & Line pane  
+   • Use a subtle fill (light color or gradient) to contrast with chart area  
+   • No outline on plot area for a cleaner, modern look  
+
+5. Reset Background  
+   • Format tab → Reset Shape  
+   • Reverts any custom fill, outline, or effects back to the active Chart Style defaults  
+
+6. Practical Tips  
+   • Use light, low‑opacity fills for backgrounds to keep data legible  
+   • Avoid heavy effects (deep shadows, bright gradients) that distract from the data  
+   • Combine picture fills with transparency to watermark without overpowering the chart  
+   • Use Reset Shape when your custom background clashes with a new Chart Style  
+
+PivotChart Tools – Analysis Group
+
+1. Insert Slicer  
+   • PivotChart Analyze → Insert Slicer  
+   • Adds clickable buttons for one or more fields to filter both the PivotChart and its PivotTable simultaneously.  
+   • Useful for interactive dashboards; select multiple items by holding Ctrl.  
+
+2. Insert Timeline  
+   • PivotChart Analyze → Insert Timeline  
+   • Available when a date field is in the PivotTable’s data model or source.  
+   • Provides a scrollable bar to filter by Years, Quarters, Months, or Days.  
+
+3. Field Buttons  
+   • PivotChart Analyze → Field Buttons  
+   • Toggles on/off the display of the on‑chart filter/drop‑down buttons for each field (Category, Series, Filter).  
+   • Hide buttons for a cleaner visual once filtering is set.  
+
+4. Show Field List  
+   • PivotChart Analyze → Field List  
+   • Toggles the PivotChart Fields pane on/off, letting you add, remove, or rearrange fields.  
+
+5. Hide & Show  
+   • PivotChart Analyze → Hide Field Buttons  
+   • Remove clutter by hiding all filter buttons; use the Field List or slicers to filter instead.  
+
+6. Drill Down / Show Details  
+   • PivotChart Analyze → Options → Enable “Show Details”  
+   • When enabled, double‑clicking a data point drills into the underlying PivotTable records.  
+
+7. Select Data  
+   • PivotChart Analyze → Select Data  
+   • Opens the Select Data Source dialog—add/remove series or adjust category ranges manually if needed.  
+
+8. Refresh  
+   • PivotChart Analyze → Refresh  
+   • Updates the PivotChart with any changes in its PivotTable or underlying data.  
+
+9. Practical Tips  
+   • Use Slicers for user‑friendly filtering instead of on‑chart buttons.  
+   • Timelines are ideal for time‑series analysis—cleaner than date filters.  
+   • Hide field buttons once filters are set to streamline the chart’s appearance.  
+   • Keep the Field List accessible during design; hide it for presentation.  
+   • Remember to Refresh after updating source data so your analysis stays current.  
+
+PivotChart Tools – Shape Styles Group
+
+1. Quick Shapes  
+   • Select a shape (textbox, annotation, drawn shape) in the chart → Format tab → Quick Styles  
+   • Gallery of preset style combinations (fill, outline, effects) for rapid formatting  
+   • Hover to preview before clicking to apply  
+
+2. Shape Fill  
+   • Format → Shape Fill  
+   • Options:  
+     – Solid Fill: choose color or More Fill Colors for custom RGB/hex  
+     – Gradient Fill: select preset gradients or build your own with stops and angles  
+     – Picture or Texture Fill: insert image or use built‑in textures (e.g., marble, canvas)  
+     – No Fill: make shape transparent  
+
+3. Shape Outline  
+   • Format → Shape Outline  
+   • Options:  
+     – Color: pick theme or custom color  
+     – Weight: adjust line thickness (e.g., 0.25 pt to 6 pt)  
+     – Dashes: choose Solid, Round Dot, Dash, Dash‑Dot, etc.  
+     – No Outline: remove border  
+
+4. Shape Effects  
+   • Format → Shape Effects  
+   • Categories:  
+     – Shadow: Outer, Inner, Perspective presets, plus custom color/size/transparency  
+     – Glow: outer glow color and size controls  
+     – Soft Edges: smooth the shape’s border with adjustable radius  
+     – Bevel: add depth with preset or custom Top/Bottom Width & Height  
+     – 3‑D Rotation: tilt and perspective settings, lighting angle  
+   • Use moderately to enhance prominence without clutter  
+
+5. Reset Shape  
+   • Format → Reset Shape  
+   • Clears all manual fill, outline, and effect formatting, restoring the current Quick Style  
+
+6. Best Practices  
+   • Use Quick Styles for consistent look across multiple shapes and charts  
+   • Match shape fill and outline colors to your workbook’s theme for professional cohesion  
+   • Apply subtle effects (soft edges, slight shadows) to call out annotations without distraction  
+   • Reset shapes when copying between charts with different themes to avoid mismatched styles  
+
+
+
