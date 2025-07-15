@@ -1459,5 +1459,157 @@ PivotChart Tools – Shape Styles Group
    • Apply subtle effects (soft edges, slight shadows) to call out annotations without distraction  
    • Reset shapes when copying between charts with different themes to avoid mismatched styles  
 
+PivotChart Tools – WordArt Style Group
+
+1. Purpose  
+   • The **WordArt Styles group** in the *Format* tab of PivotChart Tools allows you to apply artistic text effects to chart elements that support text (like titles, labels, or text boxes).
+   • It enhances visual appeal and helps emphasize specific parts of your chart.
+
+2. Components in the WordArt Styles Group:
+
+––––––––––––––––––––––––––––––––––––––––––––––––––
+
+A. **Quick WordArt Styles**
+   • Predefined text style presets combining fill, outline, and effects.
+   • To use:
+     – Select the chart text element (e.g., Chart Title)
+     – Go to Format tab → Click on a WordArt style
+     – Hover to preview before clicking to apply
+
+B. **Text Fill**
+   • Format → Text Fill  
+   • Options:
+     – Theme Colors / Standard Colors / More Fill Colors (for custom RGB or HEX)
+     – Gradient Fill: smooth color transitions
+     – Picture or Texture Fill: apply image or texture to the text
+     – No Fill: makes the text transparent (usually not recommended)
+
+C. **Text Outline**
+   • Format → Text Outline  
+   • Options:
+     – Color: choose border color for text
+     – Weight: set the thickness of the outline
+     – Dashes: apply dashed outlines for stylized appearance
+     – No Outline: removes any stroke/border
+
+D. **Text Effects**
+   • Format → Text Effects  
+   • Categories:
+     – Shadow: outer/inner/perspective shadows for 3D look
+     – Reflection: mirror-like reflection beneath the text
+     – Glow: colored outer glow with adjustable size/intensity
+     – Bevel: adds raised/engraved edge look (3D effect)
+     – 3-D Rotation: tilts text to create a 3D appearance
+   • These effects are especially useful for headings or special callouts
+
+3. Reset WordArt
+   • Reverts all text formatting (fill, outline, effects) back to the default chart theme style
+
+4. Best Practices
+   • Use sparingly—excessive effects can distract from the data
+   • Match WordArt colors with your chart theme for consistent visuals
+   • Great for chart titles or specific annotations—not ideal for data labels or axis text
+
+PivotChart Tools – Arrange Group
+
+1. Selection Pane  
+   • Home → Find & Select → Selection Pane (or Format tab → Selection Pane)  
+   • Lists all chart objects (shapes, text boxes, pictures) in z‑order  
+   • Use Show/Hide icons to toggle visibility and drag to reorder layering  
+
+2. Bring Forward / Send Backward  
+   • Format tab → Arrange group →  
+     – **Bring Forward** / **Bring to Front**: moves the selected object one step or all the way above others  
+     – **Send Backward** / **Send to Back**: moves the selected object one step or all the way behind others  
+   • Useful for layering annotations, logos, or shapes without disrupting chart elements  
+
+3. Selection & Visibility  
+   • Selection Pane also lets you rename items for clarity (double‑click name)  
+   • Hide objects temporarily without deleting  
+
+4. Align  
+   • Format tab → Align → options:  
+     – **Align Left/Center/Right**, **Align Top/Middle/Bottom**  
+     – **Distribute Horizontally** / **Distribute Vertically** for even spacing  
+     – **Snap to Grid** / **Snap to Shape** toggle  
+   • Apply to multiple selected shapes/text boxes to keep annotations neat  
+
+5. Group / Ungroup  
+   • Select multiple objects (hold Ctrl) → Format tab → Group → Group  
+   • Treat complex annotations as a single object for moving/resizing  
+   • Ungroup breaks them back into individual elements  
+
+6. Rotate  
+   • Format tab → Rotate → options:  
+     – **Rotate Right 90°** / **Rotate Left 90°**  
+     – **Flip Vertical** / **Flip Horizontal**  
+     – **More Rotation Options…** for precise angle input  
+   • Handy for adjusting text box or shape orientation within the chart  
+
+7. Practical Tips  
+   • Use the Selection Pane to manage complex overlays and ensure correct stacking order  
+   • Group shapes and text boxes that belong together to avoid accidental misalignment  
+   • Align and distribute controls help maintain consistency when adding multiple annotations  
+   • Rotate sparingly—over‑tilted labels can reduce readability  
+
+PivotChart Tools – Size Group
+
+1. Height & Width  
+   • Format tab → Size group → directly set the **Height** and **Width** of the selected chart or object  
+   • Values are in inches or centimeters depending on your Excel settings  
+   • Ensures precise sizing—especially useful when maintaining uniform chart sizes in reports or dashboards  
+
+2. Dialog Box Launcher (Size and Properties)  
+   • Click the small arrow in the bottom-right corner of the Size group to open the **Format Chart Area** pane  
+   • Go to **Size & Properties** (icon: square with measurements)  
+   • Options include:  
+     – **Lock aspect ratio**: maintains shape proportions when resizing  
+     – **Relative to original picture size** (for images)  
+     – **Position** tab for setting exact location using horizontal and vertical coordinates  
+     – **Rotation** for angled display (input degrees manually)  
+
+3. Resize with Mouse  
+   • Click and drag chart corners or edges to resize manually  
+   • Hold Shift to lock aspect ratio while resizing  
+   • Use Alt to snap to gridlines or cells  
+
+4. Locking and Protection  
+   • In Format pane → **Properties** section:  
+     – Set whether the object moves/resizes with cells or stays fixed  
+     – Choose to **lock** the object to prevent accidental changes (can be combined with worksheet protection)  
+
+5. Practical Tips  
+   • Use exact height/width for uniform layout in presentations  
+   • Lock aspect ratio to prevent distortion of charts or images  
+   • Combine position & size settings to align multiple charts neatly  
+   • Use "Lock object" when distributing templates to avoid user errors
+
+PivotChart Tools – Active Field Group
+
+1. Active Field Dropdown  
+   • Located at the left of the PivotChart Analyze tab  
+   • Shows a list of all Row, Column & Filter fields currently in the chart’s underlying PivotTable  
+   • Use to quickly switch which field you’re working on without changing your chart layout  
+
+2. Field Settings  
+   • Click Field Settings to open the settings for the selected field in the dropdown  
+   • Adjust Subtotals, Report Layout (Show items in outline/tabular form), and Filter options for that field  
+   • Any changes immediately update both the PivotTable and PivotChart  
+
+3. Move Up / Move Down  
+   • Reorders the selected field within the Rows or Columns area of the PivotTable  
+   • Click Move Up to shift the field higher (outer level) or Move Down to nest it deeper (inner level)  
+   • Changes the grouping hierarchy and how categories display on the chart  
+
+4. Remove Field  
+   • Removes the selected field from the PivotTable (and PivotChart) entirely  
+   • Use when you no longer need that dimension on your chart  
+   • Equivalent to unchecking the box in the Field List, but quicker when focused on one field  
+
+5. Tips  
+   • Always select the correct Active Field before applying filters or formatting  
+   • Reorder fields to change the chart’s grouping & drill‑down flow  
+   • Use Remove Field to declutter a chart when switching to a different analysis  
+
 
 
