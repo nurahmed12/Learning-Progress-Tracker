@@ -28,9 +28,9 @@
 - 🟢 Editing (Find & Replace) 
 - 🟢 Editing (Find & Select (Go to & Go to Special)) 
 - 🟢 Data Validation (Any value and Whole number) 
-- 🟢 Pivot Tables: Create, ing, Calculated Fields, Refresh, Slicers
-- ⚪️ Logical Functions: IF, AND, OR, NOT, IFS  
-- ⚪️ Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP  
+- 🟢 Pivot Tables: Create, Grouping, Calculated Fields, Refresh, Slicers
+- 🟢 Logical Functions: IF, AND, OR, NOT, IFS  
+- 🟢 Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP  
 - ⚪️ Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE  
 - ⚪️ Date Functions: TODAY, NOW, DATE, YEAR, MONTH, DAY, EOMONTH  
 - ⚪️ Aggregation: SUMIFS, COUNTIFS, AVERAGEIFS  
