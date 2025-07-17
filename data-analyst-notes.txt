@@ -1943,4 +1943,6 @@ Aggregation Functions – SUMIFS, COUNTIFS, AVERAGEIFS
 
 Keep this note handy to build powerful multi‑condition aggregations without confusion!  
 
+If a formula isn't dynamic (adding a new row or column to the area doesn't update the formulas) then convert the area into table and it will make the formula dinamic
+
 
