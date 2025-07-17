@@ -1759,4 +1759,188 @@ Keep this note handy to choose the right lookup method and avoid common errors!
 Ctrl + Shift + arrow selects all the arrow direction cells in an area, Shift + arrow selects immidiate arrow direction row or column based on the arrow
 Seelcting a range (e.g., C11:D13) and cliking F4 will lock them using $, clicking F4 multiple times lets you lock individually (e.g., C$11, $C11, $C$11)
 
+Text Functions – CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE
+
+1. CONCATENATE (or CONCAT in newer Excel)  
+   • Structure: CONCATENATE(text1, text2, …)  
+   • Joins multiple text strings into one.  
+     – Example: =CONCATENATE(A1, " ", B1) merges first and last name with a space.  
+   • Newer: =CONCAT(A1, " ", B1)  
+   • TIP: Use TEXTJOIN(delimiter, ignore_empty, range1, …) to join ranges with a delimiter and skip blanks.
+
+2. LEFT  
+   • Structure: LEFT(text, [num_chars])  
+   • Returns the leftmost characters from a string.  
+     – Example: =LEFT("Report2025", 6) → "Report"  
+   • num_chars defaults to 1 if omitted.  
+   • If num_chars > length, returns the entire string.
+
+3. RIGHT  
+   • Structure: RIGHT(text, [num_chars])  
+   • Returns the rightmost characters.  
+     – Example: =RIGHT("Report2025", 4) → "2025"  
+   • num_chars defaults to 1.  
+   • If num_chars > length, returns the entire string.
+
+4. MID  
+   • Structure: MID(text, start_num, num_chars)  
+   • Extracts a substring starting at a position.  
+     – Example: =MID("Spreadsheet", 6, 5) → "sheet" (starts at 6th character, length 5)  
+   • If start_num > length, returns "".  
+   • If start_num + num_chars exceeds length, returns up to the end.
+
+5. TRIM  
+   • Structure: TRIM(text)  
+   • Removes extra spaces: leading, trailing, and reduces multiple spaces between words to one.  
+     – Example: =TRIM("  Hello   World  ") → "Hello World"  
+   • Does NOT remove non‑breaking spaces (use CLEAN for non‑printables).
+
+6. LEN  
+   • Structure: LEN(text)  
+   • Returns the number of characters in a string, including spaces.  
+     – Example: =LEN("Excel Tips") → 10  
+   • Useful to pair with LEFT/RIGHT/MID to calculate dynamic lengths.
+
+7. SUBSTITUTE  
+   • Structure: SUBSTITUTE(text, old_text, new_text, [instance_num])  
+   • Replaces occurrences of old_text with new_text.  
+     – Example: =SUBSTITUTE("A-B-A-B", "B", "X") → "A-X-A-X"  
+     – To replace only the 2nd instance: =SUBSTITUTE("A-B-A-B","B","X",2) → "A-B-A-X"  
+   • Case‑sensitive.  
+   • For case‑insensitive, use UPPER/LOWER wrappers.
+
+8. Common Tips & Pitfalls  
+   • Always wrap cell references in TEXT() when concatenating numbers with formats: =TEXT(A1,"0.00")  
+   • Remember Excel treats everything as text when joined—use VALUE() to convert back to number.  
+   • Combine TRIM and CLEAN(text) to strip extra spaces and non‑printable characters before processing.  
+   • Use LEN in formulas like =LEN(A1)-LEN(SUBSTITUTE(A1,"a","")) to count occurrences of a character.  
+
+Date Functions – TODAY, NOW, DATE, YEAR, MONTH, DAY, EOMONTH
+
+1. TODAY()  
+   • Structure: TODAY()  
+   • Returns the current date (no time).  
+   • Volatile: updates each time the workbook recalculates or opens.  
+   • Example: =TODAY() → 2025‑07‑17 (if that’s today’s date)
+
+2. NOW()  
+   • Structure: NOW()  
+   • Returns current date and time.  
+   • Volatile: updates on recalculation/open.  
+   • Example: =NOW() → 2025‑07‑17 14:35
+
+3. DATE()  
+   • Structure: DATE(year, month, day)  
+   • Builds a valid date from numeric parts.  
+   • Handles out‑of‑range inputs by rolling over (e.g. month 13 → Jan of next year).  
+   • Example: =DATE(2025,7,1) → 2025‑07‑01
+
+4. YEAR, MONTH, DAY  
+   • YEAR(date) → extracts the year number  
+     – =YEAR(A1) returns 2025 if A1 is 2025‑07‑17  
+   • MONTH(date) → extracts the month (1–12)  
+     – =MONTH(A1) returns 7 if A1 is July  
+   • DAY(date) → extracts the day of month (1–31)  
+     – =DAY(A1) returns 17 if A1 is the 17th  
+
+5. EOMONTH()  
+   • Structure: EOMONTH(start_date, months)  
+   • Returns the last day of the month, offset by “months” from start_date.  
+     – months = 0 → end of the same month  
+     – months = 1 → end of next month  
+     – months = -1 → end of previous month  
+   • Example: =EOMONTH("2025-07-17", 0) → 2025‑07‑31
+
+6. Combining & Formatting Tips  
+   • To get first day of month: =DATE(YEAR(A1), MONTH(A1), 1)  
+   • To add business days: use WORKDAY or WORKDAY.INTL, not HERE  
+   • Format dates with TEXT(date, "yyyy‑mm‑dd") for consistency in concatenations  
+   • Beware that TODAY/NOW recalc on any change—use manual calculation mode if needed
+
+Excel Custom Date Formats: d, dd, ddd, dddd
+
+Purpose: Control how dates display in Excel by defining day formats (numeric and weekday names).
+
+1. d
+   - Displays: Day of month without leading zero.
+   - Range: 1–31
+   - Example: For March 5, 2025 → 5
+
+2. dd
+   - Displays: Day of month with two digits (adds leading zero if needed).
+   - Range: 01–31
+   - Example: For March 5, 2025 → 05
+
+3. ddd
+   - Displays: Abbreviated weekday name.
+   - Example: For March 5, 2025 (Wednesday) → Wed
+
+4. dddd
+   - Displays: Full weekday name.
+   - Example: For March 5, 2025 → Wednesday
+
+How Excel Interprets Repeated Letters:
+- Runs of identical letters form a single instruction (e.g., dddd is one token: full weekday name).
+- More than four letters (e.g., ddddd) behaves like four letters (dddd).
+
+Usage Examples:
+- `ddd, mmm dd, yyyy` → Wed, Mar 05, 2025
+- `dddd, mmmm d"th"` → Wednesday, March 5th
+
+Tip: Combine tokens (d, m, y) to build custom date displays matching your reporting or presentation needs.
+
+Aggregation Functions – SUMIFS, COUNTIFS, AVERAGEIFS
+
+1. Function Structures  
+   • SUMIFS(sum_range, criteria_range1, criteria1, [criteria_range2, criteria2], …)  
+   • COUNTIFS(criteria_range1, criteria1, [criteria_range2, criteria2], …)  
+   • AVERAGEIFS(average_range, criteria_range1, criteria1, [criteria_range2, criteria2], …)
+
+2. Parameters  
+   • sum_range / average_range: the cells to sum or average (for COUNTIFS omit this)  
+   • criteria_rangeN: the range to test for each condition  
+   • criteriaN: the test (number, expression, text, wildcard, or cell ref)
+
+3. Criteria Types  
+   • Number or exact text: “=5”, “Apple”  
+     – Example: criteria1 = 5 or "Completed"  
+   • Comparison operators: “>100”, “<=50” (must be in quotes)  
+   • Wildcards:  
+     – “East*” for any text starting with “East”  
+     – “?at” for any three‑letter text ending in “at”  
+   • Cell references: “>” & A1, “<>” & B1  
+   • Dates: “>=” & DATE(2025,1,1) or “<” & C1 (where C1 holds a date)
+
+4. Examples  
+   • Sum sales in North region in July:  
+     =SUMIFS(SalesRange, RegionRange, "North", MonthRange, "July")  
+   • Count orders >100 and status = “Shipped”:  
+     =COUNTIFS(OrderQty, ">100", StatusRange, "Shipped")  
+   • Average score for group A or B:  
+     =AVERAGEIFS(ScoreRange, GroupRange, "A", GroupRange, "B")  
+     (Note: to OR groups, use two SUMIFS/COUNTIFS or a filtered subset)
+
+5. Key Behaviors & Notes  
+   • All ranges must be the same size and shape; mismatched ranges cause #VALUE!  
+   • COUNTIFS and AVERAGEIFS allow multiple AND conditions only.  
+   • For OR logic, sum multiple SUMIFS or wrap COUNTIFS in SUM:  
+     =SUM(SUMIFS(...Group="A"...), SUMIFS(...Group="B"...))  
+   • Blank criteria: use “” to test blanks, "<>" to test non‑blanks.  
+   • Criteria ranges can be whole columns (e.g. A:A), but may impact performance.
+
+6. Locking References  
+   • Use $A$1:$A$100 to fix ranges when copying formulas  
+   • Mix $A1 or A$1 to lock only row or column as needed  
+   • Ensure sum/average ranges stay aligned with criteria ranges
+
+7. Tips & Best Practices  
+   • Place the most restrictive criteria first for readability  
+   • Avoid entire‑column ranges on large workbooks to speed up calculations  
+   • Use named ranges or structured table references for clarity  
+   • Wrap SUMIFS in IFERROR to handle “no match” cases:  
+     =IFERROR(SUMIFS(...), 0)  
+   • Validate with COUNTIFS that your SUMIFS scope is correct before averaging  
+
+Keep this note handy to build powerful multi‑condition aggregations without confusion!  
+
 

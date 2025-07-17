@@ -29,8 +29,8 @@
     "Logical Functions: IF, AND, OR, NOT, IFS": true,
     "Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP": true,
     "Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE": true,
-    "Date Functions: TODAY, NOW, DATE, YEAR, MONTH, DAY, EOMONTH": false,
-    "Aggregation: SUMIFS, COUNTIFS, AVERAGEIFS": false,
+    "Date Functions: TODAY, NOW, DATE, YEAR, MONTH, DAY, EOMONTH": true,
+    "Aggregation: SUMIFS, COUNTIFS, AVERAGEIFS": true,
     "Data Cleaning: Text to Columns, Remove Duplicates, Flash Fill": false,
     "Charts: Bar, Column, Line, Pie, Combo, Sparklines": false,
     "Basic Macros Recording": false
