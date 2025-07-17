@@ -31,7 +31,7 @@
 - 🟢 Pivot Tables: Create, Grouping, Calculated Fields, Refresh, Slicers
 - 🟢 Logical Functions: IF, AND, OR, NOT, IFS  
 - 🟢 Lookup & Reference: VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP  
-- ⚪️ Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE  
+- 🟢 Text Functions: CONCATENATE, LEFT, RIGHT, MID, TRIM, LEN, SUBSTITUTE  
 - ⚪️ Date Functions: TODAY, NOW, DATE, YEAR, MONTH, DAY, EOMONTH  
 - ⚪️ Aggregation: SUMIFS, COUNTIFS, AVERAGEIFS  
 - ⚪️ Data Cleaning: Text to Columns, Remove Duplicates, Flash Fill    

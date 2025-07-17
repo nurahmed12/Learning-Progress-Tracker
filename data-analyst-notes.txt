@@ -1756,5 +1756,7 @@ Lookup & Reference – VLOOKUP, HLOOKUP, INDEX, MATCH, XLOOKUP
 
 Keep this note handy to choose the right lookup method and avoid common errors!  
 
+Ctrl + Shift + arrow selects all the arrow direction cells in an area, Shift + arrow selects immidiate arrow direction row or column based on the arrow
+Seelcting a range (e.g., C11:D13) and cliking F4 will lock them using $, clicking F4 multiple times lets you lock individually (e.g., C$11, $C11, $C$11)
 
 
