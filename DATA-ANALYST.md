@@ -35,8 +35,8 @@
 - 🟢 Date Functions: TODAY, NOW, DATE, YEAR, MONTH, DAY, EOMONTH  
 - 🟢 Aggregation: SUMIFS, COUNTIFS, AVERAGEIFS  
 - 🟢 Data Cleaning: Text to Columns, Remove Duplicates, Flash Fill    
-- ⚪️ Charts: Bar, Column, Line, Pie, Combo, Sparklines  
-- ⚪️ Basic Macros Recording  
+- 🟢 Charts: Bar, Column, Line, Pie, Combo, Sparklines  
+- 🟢 Basic Macros Recording  
 
 ## Stage 2: SQL Fundamentals (Weeks 3–4)
 - ⚪️ Database Concepts: Tables, Schemas, Primary/Foreign Keys, Indexes  

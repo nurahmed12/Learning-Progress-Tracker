@@ -1985,4 +1985,118 @@ Ctrl + Space will select an entire column
 Alt + W + V  + G is the shortcut for removing gridlines
 Ctrl + E is the sortcut for flash fill
 
+Charts – Bar, Column, Line, Pie, Combo & Sparklines
+
+1. Column Charts  
+   • Use for comparing values across categories (e.g. sales by region).  
+   • Variants: Clustered, Stacked, 100% Stacked, 3‑D Column.  
+   • Tips:  
+     – Keep category labels short and rotate if they overlap.  
+     – Use 100% Stacked to show proportion of totals.
+
+2. Bar Charts  
+   • Similar to Column but horizontal—use when category names are long.  
+   • Variants: Clustered, Stacked, 100% Stacked, 3‑D Bar.  
+   • Tips:  
+     – Ideal for ranking items (e.g. top 10 products).  
+     – Sort data descending for a “waterfall” effect.
+
+3. Line Charts  
+   • Show trends over time or continuous data (e.g. monthly revenue).  
+   • Variants: Line, Stacked Line, 100% Stacked Line, Line with Markers.  
+   • Tips:  
+     – Use markers for key data points only.  
+     – Avoid too many lines—limit to 3–5 series for clarity.
+
+4. Pie Charts  
+   • Display parts‑of‑a‑whole for a single data series.  
+   • Variants: Pie, 3‑D Pie, Doughnut.  
+   • Tips:  
+     – Limit to 5–7 slices; combine small ones into “Other.”  
+     – Label slices with percentages or use a legend—avoid both.
+
+5. Combo Charts  
+   • Combine two chart types (e.g. Column + Line) for different metrics.  
+   • Assign one series to a Secondary Axis when scales differ.  
+   • Tips:  
+     – Use for comparing volume and rate (e.g. sales vs. growth rate).  
+     – Keep secondary axis clearly labeled to avoid confusion.
+
+6. Sparklines  
+   • Mini‑charts within a single cell showing trend or variance.  
+   • Types: Line, Column, Win/Loss.  
+   • Insert: Select cells → Insert → Sparklines → choose type → specify data range.  
+   • Tips:  
+     – Use in tables for quick trend spotting.  
+     – Avoid excessive formatting—sparklines should be sleek and consistent.
+
+7. Best Practices Across Chart Types  
+   • Always add a clear title and axis labels.  
+   • Use consistent color palettes—limit to 3–5 colors.  
+   • Remove gridlines and borders that don’t add meaning.  
+   • Include data labels sparingly to highlight key values.  
+   • Preview in Print Layout if you’ll share as a report.  
+
+Ctrl + F1 will automatically insert a chart for the selected area, a default chart will be inserted, you can change the default chart by choosing a chart and right click to set as default
+Clicking F11 on selected data will also create a chart out of it but on a different sheet
+
+Macros Recording – Quick Guide
+
+1. Enable the Developer Tab  
+   • File → Options → Customize Ribbon → check “Developer” → OK  
+   • Access Record, Visual Basic, and Macro tools there.
+
+2. Record a Macro  
+   1. Developer → Record Macro  
+   2. Name: enter a valid name (no spaces, start with letter)  
+   3. Shortcut key (optional): Ctrl+letter (case‑sensitive if using Ctrl+Shift)  
+   4. Store macro in:  
+      – This Workbook (default)  
+      – Personal Macro Workbook (available in all workbooks)  
+      – New Workbook  
+   5. Description: note what it does → OK  
+   6. Perform the actions you want to automate  
+   7. Developer → Stop Recording (or click the square icon)
+
+3. Run a Macro  
+   • Developer → Macros → select macro name → Run  
+   • Or use your assigned Ctrl+ shortcut  
+   • Or assign to a button/form control (see below)
+
+4. View & Edit VBA Code  
+   • Developer → Macros → select macro → Edit → opens the VBA Editor  
+   • Alt+F11 also opens VBA Editor  
+   • Locate your macro under Modules in Project Explorer
+
+5. Assign Macro to a Button or Shape  
+   1. Developer → Insert → choose Button (Form Control) or Shape  
+   2. Draw it where you want on the sheet  
+   3. In the Assign Macro dialog, pick your macro → OK  
+   4. Right‑click the button/shape → Edit Text to rename
+
+6. Macro Security Settings  
+   • File → Options → Trust Center → Trust Center Settings → Macro Settings  
+     – Disable all macros with notification (default)  
+     – Disable all except digitally signed macros  
+     – Enable all macros (not recommended)  
+   • Store personal macros in Personal.xlsb in the XLSTART folder
+
+7. Relative vs. Absolute References  
+   • Developer → Use Relative References before recording  
+     – Relative: macro acts on the active cell location  
+     – Absolute: macro uses exact cell addresses
+
+8. Best Practices  
+   • Give macros meaningful names and descriptions  
+   • Comment your VBA code (’ at line start) for clarity  
+   • Test macros on sample data before production  
+   • Avoid hard‑coding ranges—use dynamic references where possible  
+   • Backup your workbook (or Personal.xlsb) before adding macros  
+   • Keep macros in Personal Macro Workbook for reuse across files
+
+Alt + H + MC is the shortcut for Merge and Center
+Alt + H + H will take you to setting background color of a cell
+Alt + H + FC takes you to the font color
+
+
 
