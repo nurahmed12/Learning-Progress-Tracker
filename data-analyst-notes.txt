@@ -1945,4 +1945,44 @@ Keep this note handy to build powerful multi‑condition aggregations without co
 
 If a formula isn't dynamic (adding a new row or column to the area doesn't update the formulas) then convert the area into table and it will make the formula dinamic
 
+Data Cleaning – Text to Columns, Remove Duplicates & Flash Fill
+
+1. Text to Columns  
+   • Access: Select column → Data tab → Text to Columns  
+   • Delimited vs. Fixed Width:  
+     – **Delimited**: split on commas, tabs, spaces, or custom characters  
+     – **Fixed Width**: split at specified character positions  
+   • Steps for Delimited:  
+     1. Choose Delimited → Next  
+     2. Check delimiters (Comma, Tab, Space, Other) → Next  
+     3. Set each column’s Data Format (General, Text, Date) → Finish  
+   • Use to parse “First Last” into two columns or CSV data into separate fields
+
+2. Remove Duplicates  
+   • Access: Select range or entire table → Data tab → Remove Duplicates  
+   • Choose which columns to consider when identifying duplicates  
+   • Click OK to delete all but the first instance of each duplicate record  
+   • Use on headers-included tables to clean survey responses or transaction logs
+
+3. Flash Fill  
+   • Access: Start typing desired pattern in adjacent column → Data tab → Flash Fill  
+   • Or type Ctrl + E after the first example  
+   • Automatically fills down based on detected pattern (extract, combine, format)  
+     – Examples: extract first names from “John Smith” or convert “20250717” to “2025-07-17”  
+   • Works only when Excel senses a consistent pattern—verify results for edge cases
+
+Tips & Best Practices  
+   • Always keep a backup of raw data before cleaning  
+   • Use “Undo” (Ctrl+Z) immediately if results aren’t as expected  
+   • Convert ranges to Tables (Ctrl+T) so cleaning operations auto-expand with new data  
+   • Combine techniques: e.g., Text to Columns → Remove Duplicates → Flash Fill for final polish  
+
+Ctrl + Shift + + is used to insert a row or column
+Placing (*) in find will select all the values within () and we can then replace with something or nothing
+Alt + H + V + V will paste only values 
+Ctrl + - will delete an entire selected column
+Ctrl + Space will select an entire column
+Alt + W + V  + G is the shortcut for removing gridlines
+Ctrl + E is the sortcut for flash fill
+
 
