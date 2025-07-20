@@ -2098,5 +2098,74 @@ Alt + H + MC is the shortcut for Merge and Center
 Alt + H + H will take you to setting background color of a cell
 Alt + H + FC takes you to the font color
 
+Stage 2: SQL Fundamentals (Weeks 3–4)
+
+Database Concepts – Tables, Schemas, Primary/Foreign Keys & Indexes
+
+1. Tables  
+   • Definition: Structured collection of related data organized in rows (records) and columns (fields).  
+   • CREATE:  
+     ‒ CREATE TABLE table_name (  
+     ‒   column1 datatype [constraints],  
+     ‒   column2 datatype [constraints],  
+     ‒   …  
+     ‒ );  
+   • Data Types: INT, VARCHAR(n), DATE, DECIMAL(p,s), BOOLEAN, etc.  
+   • ALTER: add, modify or drop columns after creation (ALTER TABLE).
+
+2. Schemas  
+   • Definition: Logical container or namespace for database objects (tables, views, procedures).  
+   • Purpose: Organize objects, manage permissions, avoid name collisions.  
+   • CREATE:  
+     ‒ CREATE SCHEMA schema_name;  
+   • Usage:  
+     ‒ schema_name.table_name to qualify cross‑schema references.  
+     ‒ GRANT/REVOKE permissions at schema level.
+
+3. Primary Keys  
+   • Definition: Uniquely identifies each row in a table.  
+   • Characteristics:  
+     ‒ NOT NULL, UNIQUE, minimal (single or composite).  
+   • Declaration:  
+     ‒ Inline: id INT PRIMARY KEY,  
+     ‒ Or out‑of‑line: PRIMARY KEY (column1, column2).  
+   • Purpose: Ensures row uniqueness, used by foreign keys and indexes.
+
+4. Foreign Keys  
+   • Definition: Column(s) in one table that reference primary key(s) of another.  
+   • Declaration:  
+     ‒ CREATE TABLE orders (  
+     ‒   order_id INT PRIMARY KEY,  
+     ‒   customer_id INT,  
+     ‒   FOREIGN KEY (customer_id) REFERENCES customers(id)  
+     ‒ );  
+   • Options:  
+     ‒ ON DELETE CASCADE / SET NULL / RESTRICT  
+     ‒ ON UPDATE CASCADE / SET DEFAULT  
+   • Purpose: Enforce referential integrity between related tables.
+
+5. Indexes  
+   • Definition: Data structure that improves query performance on one or more columns.  
+   • Types:  
+     ‒ Single‑column: CREATE INDEX idx_name ON table(col);  
+     ‒ Composite: CREATE INDEX idx_name ON table(col1, col2);  
+     ‒ Unique: CREATE UNIQUE INDEX idx_name ON table(col);  
+     ‒ Full‑text, Spatial (vendor‑specific).  
+   • Considerations:  
+     ‒ Speed up SELECT WHERE, JOIN, ORDER BY.  
+     ‒ Slow down INSERT/UPDATE/DELETE due to maintenance.  
+     ‒ Use sparingly on high‑write tables.  
+   • Drop: DROP INDEX idx_name ON table;
+
+6. Best Practices  
+   • Always define a primary key for every table.  
+   • Use schemas to group related objects and manage access.  
+   • Index columns used frequently in WHERE, JOIN, GROUP BY, ORDER BY.  
+   • Avoid over‑indexing—monitor performance and index usage.  
+   • Name conventions: prefix indexes (idx_), fkeys (fk_), tables plural (users).  
+
+You can change the database from the ribbon where all availabe datasets are listed
+You can also manually navigate and select it
+You can use the command USE database_name
 
 

@@ -36,7 +36,7 @@
     "Basic Macros Recording": true
   },
   "Stage 2: SQL Fundamentals (Weeks 3\u20134)": {
-    "Database Concepts: Tables, Schemas, Primary/Foreign Keys, Indexes": false,
+    "Database Concepts: Tables, Schemas, Primary/Foreign Keys, Indexes": true,
     "Basic Queries: SELECT, FROM, WHERE, DISTINCT": false,
     "Filtering: AND, OR, NOT, BETWEEN, IN, LIKE, IS NULL": false,
     "Sorting & Limiting: ORDER BY, LIMIT/TOP": false,
