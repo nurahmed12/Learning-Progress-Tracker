@@ -2212,5 +2212,7 @@ Basic SQL Queries – SELECT, FROM, WHERE, DISTINCT
    WHERE e.status = 'active'  
      AND e.salary >= 60000;
 
+For filtering the data before aggregation we use WHERE and for filtering after the aggregation we use HAVING
+If we want a part of the query to execute, instead of commenting out the unwanted portion, we can simply select highlight the part that we want to execute and then click execute, and it will execute only that part of the query
 
 
