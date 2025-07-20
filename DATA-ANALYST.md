@@ -39,8 +39,8 @@
 - 🟢 Basic Macros Recording  
 
 ## Stage 2: SQL Fundamentals (Weeks 3–4)
-- ⚪️ Database Concepts: Tables, Schemas, Primary/Foreign Keys, Indexes  
-- ⚪️ Basic Queries: SELECT, FROM, WHERE, DISTINCT  
+- 🟢 Database Concepts: Tables, Schemas, Primary/Foreign Keys, Indexes  
+- 🟢 Basic Queries: SELECT, FROM, WHERE, DISTINCT  
 - ⚪️ Filtering: AND, OR, NOT, BETWEEN, IN, LIKE, IS NULL  
 - ⚪️ Sorting & Limiting: ORDER BY, LIMIT/TOP  
 - ⚪️ Aggregations: COUNT, SUM, AVG, MIN, MAX,  BY, HAVING  

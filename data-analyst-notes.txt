@@ -2167,5 +2167,50 @@ Database Concepts – Tables, Schemas, Primary/Foreign Keys & Indexes
 You can change the database from the ribbon where all availabe datasets are listed
 You can also manually navigate and select it
 You can use the command USE database_name
+Use -- for single line comments and /* */ for multi line comments
+
+Basic SQL Queries – SELECT, FROM, WHERE, DISTINCT
+
+1. SELECT  
+   • Purpose: Specify which columns to return.  
+   • Syntax:  
+     SELECT column1, column2, …  
+     • Use * to select all columns: SELECT *  
+     • Can rename with AS: SELECT first_name AS fname  
+
+2. FROM  
+   • Purpose: Specify the table(s) to query.  
+   • Syntax:  
+     FROM table_name  
+     • Use schema qualification if needed: schema.table_name  
+     • Multiple tables require JOIN or comma syntax (JOIN preferred).
+
+3. WHERE  
+   • Purpose: Filter rows based on conditions.  
+   • Syntax:  
+     WHERE condition1 [AND|OR condition2 …]  
+   • Conditions support: =, <>, >, <, >=, <=, BETWEEN, IN, LIKE, IS NULL  
+   • Example:  
+     WHERE age >= 18  
+       AND status = 'active'  
+       AND country IN ('US','CA')
+
+4. DISTINCT  
+   • Purpose: Remove duplicate rows in the result set.  
+   • Syntax:  
+     SELECT DISTINCT column1, column2, …  
+   • Applies to the combination of listed columns.  
+   • Example:  
+     SELECT DISTINCT department  
+     FROM employees  
+     WHERE salary > 50000
+
+5. Combined Example  
+   ```sql
+   SELECT DISTINCT e.department AS dept, e.role, e.hire_date  
+   FROM hr.employees AS e  
+   WHERE e.status = 'active'  
+     AND e.salary >= 60000;
+
 
 
