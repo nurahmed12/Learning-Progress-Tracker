@@ -2214,5 +2214,290 @@ Basic SQL Queries – SELECT, FROM, WHERE, DISTINCT
 
 For filtering the data before aggregation we use WHERE and for filtering after the aggregation we use HAVING
 If we want a part of the query to execute, instead of commenting out the unwanted portion, we can simply select highlight the part that we want to execute and then click execute, and it will execute only that part of the query
+DROP TABLE table_name deletes the entire table while DELETE FROM table_name or TRUNCATE TABLE table_name only deletes the data
+
+SQL Filtering – AND, OR, NOT, BETWEEN, IN, LIKE, IS NULL
+
+1. AND  
+   • Combines multiple conditions; all must be true.  
+   • Example:  
+     SELECT * FROM students  
+     WHERE age > 18 AND enrolled = 'yes';
+
+2. OR  
+   • At least one condition must be true.  
+   • Example:  
+     SELECT * FROM courses  
+     WHERE subject = 'Math' OR subject = 'Physics';
+
+3. NOT  
+   • Reverses a condition’s result.  
+   • Example:  
+     SELECT * FROM users  
+     WHERE NOT status = 'inactive';
+
+4. BETWEEN  
+   • Checks if a value is within a range (inclusive).  
+   • Example:  
+     SELECT * FROM orders  
+     WHERE order_date BETWEEN '2024-01-01' AND '2024-12-31';
+
+5. IN  
+   • Checks if a value matches any item in a list.  
+   • Example:  
+     SELECT * FROM employees  
+     WHERE department IN ('HR', 'IT', 'Finance');  
+   • Can also use with NOT:  
+     WHERE department NOT IN ('Sales', 'Marketing');
+
+6. LIKE  
+   • Pattern matching using wildcards:  
+     – `%` = any sequence of characters  
+     – `_` = any single character  
+   • Examples:  
+     SELECT * FROM customers  
+     WHERE name LIKE 'J%';  -- starts with 'J'  
+     SELECT * FROM files  
+     WHERE filename LIKE '%.pdf'; -- ends with '.pdf'  
+     SELECT * FROM products  
+     WHERE code LIKE 'A_1'; -- 'A' + any char + '1'
+
+7. IS NULL / IS NOT NULL  
+   • Checks for NULL (missing) values.  
+   • Examples:  
+     SELECT * FROM feedback  
+     WHERE comments IS NULL;  
+     SELECT * FROM feedback  
+     WHERE comments IS NOT NULL;
+
+8. Combining Conditions  
+   • Use parentheses to control logic:  
+     SELECT * FROM books  
+     WHERE (genre = 'Sci-Fi' OR genre = 'Fantasy')  
+       AND published_year >= 2010;
+
+9. Notes  
+   • AND has higher precedence than OR—use parentheses for clarity.  
+   • BETWEEN is inclusive: includes boundary values.  
+   • IN is cleaner than using many ORs.  
+   • LIKE is case-sensitive in some databases (e.g. PostgreSQL), but not in others (e.g. MySQL by default).
+
+Sorting & Limiting – ORDER BY, LIMIT, TOP
+
+1. ORDER BY  
+   • Sorts the result set based on one or more columns.  
+   • Syntax:  
+     SELECT columns  
+     FROM table  
+     ORDER BY column1 [ASC|DESC], column2 [ASC|DESC];  
+   • Default: ASC (ascending)  
+   • Example:  
+     SELECT name, age  
+     FROM students  
+     ORDER BY age DESC, name ASC;
+
+2. LIMIT (MySQL, PostgreSQL, SQLite)  
+   • Restricts the number of rows returned.  
+   • Syntax:  
+     SELECT * FROM table  
+     ORDER BY column  
+     LIMIT n;  -- return top n rows  
+   • Example:  
+     SELECT * FROM sales  
+     ORDER BY total DESC  
+     LIMIT 10; -- top 10 highest sales
+
+3. OFFSET (Used with LIMIT)  
+   • Skips rows before starting to return results.  
+   • Syntax:  
+     SELECT * FROM table  
+     ORDER BY column  
+     LIMIT n OFFSET m; -- skip m rows, return next n  
+   • Example:  
+     SELECT * FROM employees  
+     ORDER BY hire_date  
+     LIMIT 5 OFFSET 10; -- rows 11–15 by hire date
+
+4. TOP (SQL Server)  
+   • Alternative to LIMIT for SQL Server & MS Access.  
+   • Syntax:  
+     SELECT TOP n *  
+     FROM table  
+     ORDER BY column DESC;  
+   • Example:  
+     SELECT TOP 3 name, score  
+     FROM exams  
+     ORDER BY score DESC;
+
+5. FETCH FIRST (ANSI SQL / Oracle)  
+   • Another alternative to LIMIT (standard SQL).  
+   • Example:  
+     SELECT * FROM customers  
+     ORDER BY signup_date DESC  
+     FETCH FIRST 5 ROWS ONLY;
+
+6. Notes  
+   • Always pair ORDER BY with LIMIT/TOP for consistent results.  
+   • ORDER BY can use column numbers: ORDER BY 2 DESC (2nd column).  
+   • OFFSET is useful for pagination (e.g. showing results page by page).  
+   • Avoid using LIMIT without ORDER BY—it may return unpredictable rows.
+
+Aggregations – COUNT, SUM, AVG, MIN, MAX, GROUP BY & HAVING
+
+1. COUNT  
+   • COUNT(*)  
+     – Counts all rows, including those with NULLs in other columns.  
+   • COUNT(column)  
+     – Counts only non‑NULL values in that column.  
+   • COUNT(DISTINCT column)  
+     – Counts unique non‑NULL values.  
+   • Example:  
+     SELECT COUNT(*)    AS total_orders,  
+            COUNT(user_id) AS answered_surveys  
+     FROM orders;
+
+2. SUM  
+   • SUM(numeric_column)  
+     – Adds up all non‑NULL values.  
+   • Returns NULL if no non‑NULL rows (use COALESCE to default to 0).  
+   • Example:  
+     SELECT SUM(amount) AS total_revenue  
+     FROM sales;
+
+3. AVG  
+   • AVG(numeric_column)  
+     – Calculates the mean of non‑NULL values.  
+   • Ignores NULLs automatically.  
+   • Example:  
+     SELECT AVG(score) AS avg_score  
+     FROM exam_results;
+
+4. MIN & MAX  
+   • MIN(column)  
+     – Returns smallest value (numeric, date, or text).  
+   • MAX(column)  
+     – Returns largest value.  
+   • Examples:  
+     SELECT MIN(order_date) AS first_order,  
+            MAX(order_date) AS latest_order  
+     FROM orders;
+
+5. GROUP BY  
+   • Groups rows sharing the same values in listed columns.  
+   • Syntax:  
+     SELECT col1, col2, AGG_FUNC(col3)  
+     FROM table  
+     [WHERE ...]  
+     GROUP BY col1, col2;  
+   • Example:  
+     SELECT department, SUM(salary) AS dept_payroll  
+     FROM employees  
+     GROUP BY department;
+
+6. HAVING  
+   • Filters groups after aggregation (WHERE cannot use aggregates).  
+   • Syntax:  
+     SELECT col, AGG_FUNC(col2)  
+     FROM table  
+     GROUP BY col  
+     HAVING AGG_FUNC(col2) > value;  
+   • Example:  
+     SELECT department, COUNT(*) AS num_emps  
+     FROM employees  
+     GROUP BY department  
+     HAVING COUNT(*) >= 5;
+
+7. Combined Example  
+   ```sql
+   SELECT manager_id,
+          COUNT(*)      AS team_size,
+          AVG(sales)    AS avg_sales,
+          MIN(sales)    AS min_sale,
+          MAX(sales)    AS max_sale
+   FROM sales_data
+   WHERE sale_date BETWEEN '2025-01-01' AND '2025-06-30'
+   GROUP BY manager_id
+   HAVING AVG(sales) > 10000
+   ORDER BY team_size DESC;
+
+Joins – INNER, LEFT, RIGHT, FULL OUTER & CROSS
+
+1. INNER JOIN  
+   • Returns rows where the join condition matches in both tables.  
+   • Syntax:  
+     SELECT a.col1, b.col2  
+     FROM tableA AS a  
+     INNER JOIN tableB AS b  
+       ON a.key = b.key;  
+   • Example:  
+     SELECT e.name, d.dept_name  
+     FROM employees e  
+     INNER JOIN departments d  
+       ON e.dept_id = d.id;  
+   • Only matching pairs appear in results.
+
+2. LEFT JOIN (or LEFT OUTER JOIN)  
+   • Returns all rows from the left table, plus matching rows from the right.  
+   • Non‑matching right rows yield NULLs.  
+   • Syntax:  
+     SELECT a.*, b.*  
+     FROM tableA a  
+     LEFT JOIN tableB b  
+       ON a.key = b.key;  
+   • Example:  
+     SELECT c.customer, o.order_id  
+     FROM customers c  
+     LEFT JOIN orders o  
+       ON c.id = o.customer_id;  
+   • Use to find “orphan” left‑side records with no match.
+
+3. RIGHT JOIN (or RIGHT OUTER JOIN)  
+   • Returns all rows from the right table, plus matching rows from the left.  
+   • Non‑matching left rows yield NULLs.  
+   • Syntax:  
+     SELECT a.*, b.*  
+     FROM tableA a  
+     RIGHT JOIN tableB b  
+       ON a.key = b.key;  
+   • Example:  
+     SELECT p.product, s.sale_id  
+     FROM products p  
+     RIGHT JOIN sales s  
+       ON p.id = s.product_id;  
+   • Useful when focusing on the right table’s completeness.
+
+4. FULL OUTER JOIN  
+   • Returns all rows when there is a match in either table.  
+   • Non‑matching columns from either side yield NULLs.  
+   • Syntax:  
+     SELECT a.*, b.*  
+     FROM tableA a  
+     FULL OUTER JOIN tableB b  
+       ON a.key = b.key;  
+   • Example:  
+     SELECT e.name, m.manager_name  
+     FROM employees e  
+     FULL OUTER JOIN managers m  
+       ON e.manager_id = m.id;  
+   • Combines LEFT and RIGHT JOIN; shows all records.
+
+5. CROSS JOIN  
+   • Returns the Cartesian product of both tables (every combination).  
+   • Syntax:  
+     SELECT a.col, b.col  
+     FROM tableA a  
+     CROSS JOIN tableB b;  
+   • Example:  
+     SELECT p.product, d.discount_code  
+     FROM products p  
+     CROSS JOIN discounts d;  
+   • Use sparingly—result size = rowsA × rowsB.
+
+6. JOIN Tips & Best Practices  
+   • Always qualify column names when joining (e.g., a.id, b.id) to avoid ambiguity.  
+   • Prefer explicit JOIN syntax over comma‑separated tables for clarity.  
+   • Index join columns to improve performance.  
+   • Use INNER JOIN for filtering to matching records only; OUTER JOINs to retain unmatched rows.  
+   • For FULL OUTER in MySQL (which lacks it), simulate with UNION of LEFT and RIGHT JOINs.  
 
 

@@ -41,10 +41,10 @@
 ## Stage 2: SQL Fundamentals (Weeks 3–4)
 - 🟢 Database Concepts: Tables, Schemas, Primary/Foreign Keys, Indexes  
 - 🟢 Basic Queries: SELECT, FROM, WHERE, DISTINCT  
-- ⚪️ Filtering: AND, OR, NOT, BETWEEN, IN, LIKE, IS NULL  
-- ⚪️ Sorting & Limiting: ORDER BY, LIMIT/TOP  
-- ⚪️ Aggregations: COUNT, SUM, AVG, MIN, MAX,  BY, HAVING  
-- ⚪️ Joins: INNER, LEFT, RIGHT, FULL OUTER, CROSS  
+- 🟢 Filtering: AND, OR, NOT, BETWEEN, IN, LIKE, IS NULL  
+- 🟢 Sorting & Limiting: ORDER BY, LIMIT/TOP  
+- 🟢 Aggregations: COUNT, SUM, AVG, MIN, MAX, BY, HAVING  
+- 🟢 Joins: INNER, LEFT, RIGHT, FULL OUTER, CROSS  
 - ⚪️ Subqueries: Correlated & Non-correlated  
 - ⚪️ Common Table Expressions (CTEs)  
 - ⚪️ Window Functions: ROW_NUMBER, RANK, DENSE_RANK, LEAD, LAG  
