@@ -45,10 +45,12 @@
 - 🟢 Sorting & Limiting: ORDER BY, LIMIT/TOP  
 - 🟢 Aggregations: COUNT, SUM, AVG, MIN, MAX, BY, HAVING  
 - 🟢 Joins: INNER, LEFT, RIGHT, FULL OUTER, CROSS  
-- ⚪️ Subqueries: Correlated & Non-correlated  
-- ⚪️ Common Table Expressions (CTEs)  
+- 🟢 Set Operations: UNION, UNION ALL, INTERSECT, EXCEPT   
+- 🟢 Single‑Row Functions: Text, Numeric, Date/Time & Conversion    
+- 🟢 Date & Time Functions (SQL)  
 - ⚪️ Window Functions: ROW_NUMBER, RANK, DENSE_RANK, LEAD, LAG  
-- ⚪️ Set Operations: UNION, UNION ALL, INTERSECT, EXCEPT  
+- ⚪️ Subqueries: Correlated & Non-correlated  
+- ⚪️ Common Table Expressions (CTEs)   
 - ⚪️ Case Statements, Aliases, Comments  
 - ⚪️ Transactions & Basic Optimization  
 

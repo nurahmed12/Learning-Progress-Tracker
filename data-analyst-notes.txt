@@ -2500,4 +2500,208 @@ Joins – INNER, LEFT, RIGHT, FULL OUTER & CROSS
    • Use INNER JOIN for filtering to matching records only; OUTER JOINs to retain unmatched rows.  
    • For FULL OUTER in MySQL (which lacks it), simulate with UNION of LEFT and RIGHT JOINs.  
 
+Set Operations – UNION, UNION ALL, INTERSECT & EXCEPT
+
+1. UNION  
+   • Combines results of two queries into one result set, removing duplicates.  
+   • Syntax:  
+     SELECT col1, col2, …  
+     FROM tableA  
+     UNION  
+     SELECT col1, col2, …  
+     FROM tableB;  
+   • Requirements: same number of columns and compatible data types in each SELECT.
+
+2. UNION ALL  
+   • Same as UNION but **keeps** duplicate rows.  
+   • Syntax:  
+     SELECT … FROM tableA  
+     UNION ALL  
+     SELECT … FROM tableB;  
+   • Faster than UNION because it skips the duplicate elimination step.
+
+3. INTERSECT  
+   • Returns only rows **common** to both queries.  
+   • Syntax (if supported):  
+     SELECT … FROM tableA  
+     INTERSECT  
+     SELECT … FROM tableB;  
+   • Eliminates duplicates in the result.
+
+4. EXCEPT (or MINUS)  
+   • Returns rows from the first query that **don’t** appear in the second.  
+   • Syntax (SQL Server/PostgreSQL):  
+     SELECT … FROM tableA  
+     EXCEPT  
+     SELECT … FROM tableB;  
+   • Oracle uses MINUS instead of EXCEPT.  
+   • Eliminates duplicates in the result.
+
+5. Key Points  
+   • Column order and types must match across all SELECTs.  
+   • ORDER BY can only appear at the **end** of the final SELECT.  
+   • Use UNION ALL when you need full combined data (including duplicates).  
+   • INTERSECT & EXCEPT require database support (not in MySQL without workaround).  
+   • Performance: set operations can trigger sorting/hash operations—index underlying tables where possible.  
+
+Single‑Row Functions – Text, Numeric, Date/Time & Conversion
+
+1. Text/String Functions  
+   • UPPER(text) / LOWER(text)  
+     – Convert to all uppercase or lowercase.  
+     – Example: UPPER('Excel') → 'EXCEL'  
+   • INITCAP(text)  
+     – Capitalize first letter of each word.  
+     – Example: INITCAP('excel functions') → 'Excel Functions'  
+   • LENGTH(text)  
+     – Returns number of characters.  
+     – Example: LENGTH('Data') → 4  
+   • SUBSTR(text, start, [length])  
+     – Extracts substring.  
+     – Example: SUBSTR('Database', 1, 4) → 'Data'  
+   • TRIM(text) / LTRIM(text) / RTRIM(text)  
+     – Remove spaces (both/single‑side).  
+     – Example: TRIM('  Hello  ') → 'Hello'  
+   • REPLACE(text, search, replace)  
+     – Substitute all occurrences.  
+     – Example: REPLACE('A-B-A','A','X') → 'X-B-X'  
+   • CONCAT(text1, text2)  
+     – Join two strings.  
+     – Example: CONCAT('Hi',' There') → 'Hi There'  
+
+2. Numeric/Math Functions  
+   • ABS(number)  
+     – Absolute value.  
+     – Example: ABS(-5) → 5  
+   • ROUND(number, [decimals])  
+     – Round to specified decimals.  
+     – Example: ROUND(2.678,2) → 2.68  
+   • TRUNC(number, [decimals])  
+     – Truncate without rounding.  
+     – Example: TRUNC(2.678,2) → 2.67  
+   • CEIL(number) / FLOOR(number)  
+     – Smallest integer ≥ / largest integer ≤ value.  
+     – Example: CEIL(2.1) → 3; FLOOR(2.9) → 2  
+   • MOD(number, divisor)  
+     – Remainder of division.  
+     – Example: MOD(10,3) → 1  
+
+3. Date/Time Functions  
+   • SYSDATE() / CURRENT_DATE  
+     – Returns current date (DB server).  
+   • EXTRACT(part FROM date)  
+     – Pull year, month, day, etc.  
+     – Example: EXTRACT(YEAR FROM '2025-07-17') → 2025  
+   • TRUNC(date, format)  
+     – Truncate to day/month/year.  
+     – Example: TRUNC('2025-07-17','MM') → '2025-07-01'  
+   • ROUND(date, format)  
+     – Round to nearest period.  
+     – Example: ROUND('2025-07-17','MM') → '2025-08-01'  
+   • ADD_MONTHS(date, n)  
+     – Add n months.  
+     – Example: ADD_MONTHS('2025-07-17',1) → '2025-08-17'  
+   • MONTHS_BETWEEN(date1, date2)  
+     – Fractional months difference.  
+     – Example: MONTHS_BETWEEN('2025-07-17','2025-05-17') → 2  
+   • NEXT_DAY(date, 'DAY')  
+     – Next specified weekday.  
+     – Example: NEXT_DAY('2025-07-17','MONDAY') → next Monday  
+
+4. NULL Handling & Conversion  
+   • NVL(expr, replacement) / COALESCE(expr1, expr2, …)  
+     – Replace NULL with default.  
+     – Example: NVL(phone,'N/A')  
+   • TO_CHAR(value, format)  
+     – Convert date/number to text.  
+     – Example: TO_CHAR(SYSDATE,'YYYY‑MM‑DD')  
+   • TO_DATE(text, format)  
+     – Parse text into date.  
+     – Example: TO_DATE('2025‑07‑17','YYYY‑MM‑DD')  
+   • CAST(expr AS datatype)  
+     – Explicit type conversion.  
+     – Example: CAST('123' AS INT) → 123  
+
+5. Usage Tips  
+   • Functions operate **per row** on input values before any grouping.  
+   • Combine: SUBSTR(UPPER(name),1,1) for first‑letter initials.  
+   • Be mindful of NULLs—wrap expressions in NVL/COALESCE if needed.  
+   • Use format masks in TO_CHAR/TO_DATE to match locale and display needs.  
+   • Index expressions (e.g. function(column)) may prevent index use—consider computed columns if performance critical.  
+
+Date & Time Functions (SQL)
+
+1. CURRENT_DATE & CURRENT_TIMESTAMP  
+   • CURRENT_DATE  
+     – Returns today’s date (no time).  
+     – Example: SELECT CURRENT_DATE; → ‘2025-07-22’  
+   • CURRENT_TIMESTAMP  
+     – Returns current date and time with fractional seconds.  
+     – Example: SELECT CURRENT_TIMESTAMP; → ‘2025-07-22 14:35:12.123456’
+
+2. DATE & TIME Constructors  
+   • DATE ’YYYY-MM-DD’  
+     – Literal date constant.  
+     – Example: SELECT DATE ’2025-01-01’;  
+   • TIME ’HH:MI:SS’  
+     – Literal time constant.  
+     – Example: SELECT TIME ’08:30:00’;  
+   • TIMESTAMP ’YYYY-MM-DD HH:MI:SS’  
+     – Literal timestamp constant.  
+
+3. EXTRACT(part FROM source)  
+   • Pulls a component from date/time.  
+   • Parts: YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, etc.  
+   • Example:  
+     SELECT EXTRACT(YEAR FROM order_date) AS yr,  
+            EXTRACT(MONTH FROM order_date) AS mon  
+     FROM orders;
+
+4. DATE_TRUNC(unit, timestamp)  
+   • Rounds down to beginning of specified unit.  
+   • Units: millennium, century, decade, year, quarter, month, week, day, hour, minute.  
+   • Example:  
+     SELECT DATE_TRUNC('month', CURRENT_TIMESTAMP) → ‘2025-07-01 00:00:00’;
+
+5. DATE_ADD & DATE_SUB (MySQL)  
+   • DATE_ADD(date, INTERVAL n unit)  
+   • DATE_SUB(date, INTERVAL n unit)  
+   • Units: SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, YEAR, etc.  
+   • Example:  
+     SELECT DATE_ADD('2025-07-22', INTERVAL 7 DAY) → ‘2025-07-29’;  
+
+6. ADD_MONTHS & MONTHS_BETWEEN (Oracle/PostgreSQL)  
+   • ADD_MONTHS(date, n)  
+     – Adds n months, preserving day where possible.  
+     – Example: ADD_MONTHS('2025-01-31',1) → ‘2025-02-28’;  
+   • MONTHS_BETWEEN(date1, date2)  
+     – Fractional number of months between dates.  
+
+7. DATEDIFF (SQL Server/MySQL)  
+   • DATEDIFF(unit, start, end)  
+   • Units: year, quarter, month, day, hour, minute, second (SQL Server)  
+   • Example:  
+     SELECT DATEDIFF(day, '2025-07-01','2025-07-22') → 21;
+
+8. INTERVAL Arithmetic (PostgreSQL)  
+   • date + INTERVAL 'n unit'  
+     – Example: CURRENT_DATE + INTERVAL '1 month';  
+   • timestamp - timestamp  
+     – Returns INTERVAL type (days, hours, minutes).  
+
+9. Formatting & Conversion  
+   • TO_CHAR(date, format)  
+     – Formats date/time as text.  
+     – Example: TO_CHAR(order_date,'DD-Mon-YYYY') → ‘22-Jul-2025’;  
+   • TO_DATE(text, format) (Oracle/PostgreSQL)  
+     – Parses text into DATE.  
+   • CAST(expr AS DATE/TIME/TIMESTAMP)  
+     – Converts between types.  
+
+10. Tips & Notes  
+    • Functions and syntax vary by dialect—check your RDBMS docs.  
+    • Use DATE_TRUNC for grouping by month/quarter in analytics.  
+    • Avoid mixing date and string types without explicit conversion.  
+    • Remember time zone considerations with TIMESTAMP WITH TIME ZONE types.  
+
 
