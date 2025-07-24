@@ -48,7 +48,7 @@
 - 🟢 Set Operations: UNION, UNION ALL, INTERSECT, EXCEPT   
 - 🟢 Single‑Row Functions: Text, Numeric, Date/Time & Conversion    
 - 🟢 Date & Time Functions (SQL)  
-- ⚪️ Window Functions: ROW_NUMBER, RANK, DENSE_RANK, LEAD, LAG  
+- 🟢 Window Functions: ROW_NUMBER, RANK, DENSE_RANK, LEAD, LAG  
 - ⚪️ Subqueries: Correlated & Non-correlated  
 - ⚪️ Common Table Expressions (CTEs)   
 - ⚪️ Case Statements, Aliases, Comments  

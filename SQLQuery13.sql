@@ -92,4 +92,25 @@ select *,
 	datalength(trim(category)) CategoryLenAfter
 from orders;
 
+with Orders as (
+select 1 Id, 'A' Category union
+select 2, Null union
+select 3, '' union
+select 4, '   '
+)
+select *,
+trim(category) Policy1,
+nullif(trim(category), '') Policy2
+from orders;
 
+--Use the default value 'unknown' and avoid using nulls, empty strings, and blank spaces.
+with Orders as (
+select 1 Id, 'A' Category union
+select 2, Null union
+select 3, '' union
+select 4, '   '
+)
+select *,
+nullif(trim(category), '') Policy1,
+coalesce(nullif(trim(category), ''), 'unknown') Policy2
+from orders;

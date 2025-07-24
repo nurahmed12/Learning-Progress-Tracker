@@ -2704,4 +2704,63 @@ Date & Time Functions (SQL)
     • Avoid mixing date and string types without explicit conversion.  
     • Remember time zone considerations with TIMESTAMP WITH TIME ZONE types.  
 
+Window Functions – ROW_NUMBER, RANK, DENSE_RANK, LEAD & LAG
+
+1. ROW_NUMBER()  
+   • Assigns a unique sequential integer to each row within a partition, based on the ORDER BY clause.  
+   • Syntax:  
+     ROW_NUMBER() OVER (PARTITION BY partition_expr ORDER BY sort_expr [ASC|DESC])  
+   • Example:  
+     SELECT name, department,  
+            ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS dept_rank  
+     FROM employees;  
+   • Use for “top‑N per group” queries or to generate unique row IDs.
+
+2. RANK()  
+   • Assigns a ranking number to rows within a partition; ties receive the same rank, but gaps appear after ties.  
+   • Syntax:  
+     RANK() OVER (PARTITION BY partition_expr ORDER BY sort_expr)  
+   • Example:  
+     SELECT sales_rep, region,  
+            RANK() OVER (PARTITION BY region ORDER BY sales DESC) AS region_rank  
+     FROM sales;  
+   • If two rows tie for rank 1, the next rank is 3.
+
+3. DENSE_RANK()  
+   • Similar to RANK(), but ranks are consecutive—no gaps after ties.  
+   • Syntax:  
+     DENSE_RANK() OVER (PARTITION BY partition_expr ORDER BY sort_expr)  
+   • Example:  
+     SELECT product, category,  
+            DENSE_RANK() OVER (PARTITION BY category ORDER BY units_sold DESC) AS category_rank  
+     FROM inventory;  
+   • If two items tie for rank 1, the next rank is 2.
+
+4. LEAD()  
+   • Accesses data from the next row (offset forward) within the partition.  
+   • Syntax:  
+     LEAD(value_expr, offset[, default]) OVER (PARTITION BY partition_expr ORDER BY sort_expr)  
+   • Example:  
+     SELECT date, revenue,  
+            LEAD(revenue, 1, 0) OVER (ORDER BY date) AS next_day_revenue  
+     FROM daily_sales;  
+   • Use to compare current vs. next row values (e.g., trend analysis).
+
+5. LAG()  
+   • Accesses data from the previous row (offset backward) within the partition.  
+   • Syntax:  
+     LAG(value_expr, offset[, default]) OVER (PARTITION BY partition_expr ORDER BY sort_expr)  
+   • Example:  
+     SELECT date, revenue,  
+            LAG(revenue, 1, 0) OVER (ORDER BY date) AS prev_day_revenue  
+     FROM daily_sales;  
+   • Use to compute differences between current and prior rows.
+
+6. Common Notes  
+   • All window functions require an OVER(...) clause.  
+   • PARTITION BY defines groups; omit it to treat the entire result set as one partition.  
+   • ORDER BY inside OVER controls the sequence for ranking or lead/lag.  
+   • Window functions do not reduce row count—they return one result per input row.  
+   • Combine with a WHERE or CTE to filter for specific ranks or trend conditions.  
+
 

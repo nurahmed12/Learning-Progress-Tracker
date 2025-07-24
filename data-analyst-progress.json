@@ -45,7 +45,7 @@
     "Set Operations: UNION, UNION ALL, INTERSECT, EXCEPT": true,
     "SingleRow Functions: Text, Numeric, Date/Time & Conversion": true,
     "Date & Time Functions (SQL)": true,
-    "Window Functions: ROW_NUMBER, RANK, DENSE_RANK, LEAD, LAG": false,
+    "Window Functions: ROW_NUMBER, RANK, DENSE_RANK, LEAD, LAG": true,
     "Subqueries: Correlated & Non-correlated": false,
     "Common Table Expressions (CTEs)": false,
     "Case Statements, Aliases, Comments": false,
