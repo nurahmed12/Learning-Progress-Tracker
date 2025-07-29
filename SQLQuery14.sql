@@ -223,7 +223,112 @@ group by customerid;
 --additionally provide all customers details
 select *,
 	count(*) over() TotalCustomers,
+	count(1) over() TotalCustomers,
 	count(score) over() TotalScores,
 	count(country) over() TotalCountries,
 	count(lastname) over() TotalLastnames
 from sales.customers;
+
+--Check whether the table Orders contains any
+--duplicate rows.
+select 
+	orderid,
+	count(*) over(partition by orderid) CheckPK
+from sales.orders;
+
+select * 
+from (
+	select
+		orderid,
+		count(*) over(partition by orderid) CheckPK
+	from sales.OrdersArchive
+)t where CheckPK > 1;
+
+--Find the percentage contribution of each product's sales to the total sales
+select
+	orderid,
+	productid,
+	sales,
+	sum(sales) over() TotalSales,
+	round((cast(sum(sales) over(partition by productid) as float) / sum(sales) over()) * 100, 2) ProductContribution
+from sales.orders;
+
+--Find the average sales across all orders
+--And find the average sales for each product
+--additionally provide details such as orderid, orderdate
+select
+	orderid,
+	orderdate,
+	productid,
+	sales,
+	avg(sales) over () AvgSales,
+	avg(sales) over(partition by productid) AvgProductSales
+from sales.orders;
+
+select 
+	customerid,
+	lastname,
+	score,
+	avg(score) over() AvgScore,
+	coalesce(score, 0) CustomerScore,
+	avg(coalesce(score, 0)) over() AverageScore
+from sales.customers;
+
+--Find all orders where sales are higher than the average sales across all orders
+select * from 
+(
+select 
+	orderid,
+	sales,
+	avg(sales) over() AvgSales
+from sales.orders
+)t
+where AvgSales < sales;
+
+select
+	orderid,
+	orderdate,
+	productid,
+	sales,
+	max(sales) over() HighestSales,
+	min(sales) over() LowestSales,
+	max(sales) over(partition by productid) HighestSalesProduct,
+	min(sales) over(partition by productid) LowestSalesProduct
+from sales.orders;
+
+--Show the employees who have the highest salaries
+select * from
+(
+select
+	firstname,
+	lastname,
+	salary,
+	max(salary) over() MaxSalary
+from sales.employees
+)t 
+where MaxSalary = salary;
+
+--Find the deviation of each sales from the minimum and maximum sales amount
+select
+	orderid,
+	orderdate,
+	productid,
+	sales,
+	max(sales) over() HighestSales,
+	min(sales) over() LowestSales,
+	sales - min(sales) over() DeviationFromMin,
+	max(sales) over() - sales DeviationFromMax
+from sales.orders;
+
+--Calculate moving average of sales for each product over time
+--Calculate moving average of sales for each product over time, including only the next order
+select
+	orderid,
+	productid,
+	orderdate,
+	sales,
+	avg(sales) over(partition by productid) AvgByProduct,
+	avg(sales) over(partition by productid order by orderdate) MovingAvg,
+	avg(sales) over(partition by productid order by orderdate rows between current row and 1 following) RollingAvg
+from sales.orders;
+
