@@ -46,8 +46,8 @@
     "SingleRow Functions: Text, Numeric, Date/Time & Conversion": true,
     "Date & Time Functions (SQL)": true,
     "Window Functions: ROW_NUMBER, RANK, DENSE_RANK, LEAD, LAG": true,
-    "Subqueries: Correlated & Non-correlated": false,
-    "Common Table Expressions (CTEs)": false,
+    "Subqueries: Correlated & Non-correlated": true,
+    "Common Table Expressions (CTEs)": true,
     "Case Statements, Aliases, Comments": false,
     "Transactions & Basic Optimization": false
   },

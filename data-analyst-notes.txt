@@ -2763,4 +2763,143 @@ Window Functions – ROW_NUMBER, RANK, DENSE_RANK, LEAD & LAG
    • Window functions do not reduce row count—they return one result per input row.  
    • Combine with a WHERE or CTE to filter for specific ranks or trend conditions.  
 
+Subqueries: Correlated & Non-Correlated
+
+1. What is a Subquery?  
+   • A subquery is a query nested inside another query (SELECT, FROM, or WHERE).  
+   • It provides intermediate results used by the outer/main query.
+
+────────────────────────────────────────────
+2. Non-Correlated Subquery  
+   • Executes independently of the outer query.  
+   • Runs once and returns a single or multiple values.  
+   • Commonly used in WHERE, FROM, or SELECT clauses.
+
+   Example 1: Scalar subquery (returns one value)  
+   SELECT name  
+   FROM employees  
+   WHERE salary > (SELECT AVG(salary) FROM employees);  
+
+   Example 2: IN subquery (returns multiple values)  
+   SELECT name  
+   FROM employees  
+   WHERE department_id IN (SELECT id FROM departments WHERE location = 'New York');  
+
+   Characteristics:  
+   - Inner query runs first.  
+   - No dependency on outer query’s row.  
+   - More performant than correlated subqueries.
+
+────────────────────────────────────────────
+3. Correlated Subquery  
+   • Depends on each row of the outer query to execute.  
+   • Executes once per row of the outer query.  
+   • Typically used in WHERE or SELECT clauses.
+
+   Example:  
+   SELECT e.name  
+   FROM employees e  
+   WHERE salary > (SELECT AVG(salary)  
+                   FROM employees  
+                   WHERE department_id = e.department_id);  
+
+   Characteristics:  
+   - Inner query refers to outer query’s columns (e.department_id).  
+   - Slower for large data sets due to repeated execution.  
+   - Useful for row-by-row comparisons (e.g., rank within group).
+
+────────────────────────────────────────────
+4. Subquery in FROM Clause (Inline View)  
+   • Acts like a temporary table or view.  
+   • Can be joined with other tables.
+
+   Example:  
+   SELECT dept, avg_sal  
+   FROM (SELECT department_id AS dept, AVG(salary) AS avg_sal  
+         FROM employees  
+         GROUP BY department_id) AS dept_avg  
+   WHERE avg_sal > 50000;
+
+────────────────────────────────────────────
+5. Subquery in SELECT Clause  
+   • Useful for embedding a scalar calculation for each row.  
+
+   Example:  
+   SELECT name,  
+          (SELECT COUNT(*) FROM tasks WHERE tasks.emp_id = e.id) AS task_count  
+   FROM employees e;
+
+────────────────────────────────────────────
+6. Tips  
+   • Use correlated subqueries carefully—they’re powerful but can be slow.  
+   • Always test subqueries independently when debugging.  
+   • Prefer joins or CTEs if performance matters and logic permits.  
+
+Common Table Expressions (CTEs)
+
+1. What is a CTE?  
+   • A Common Table Expression (CTE) is a temporary result set that you can reference within a `SELECT`, `INSERT`, `UPDATE`, or `DELETE` statement.  
+   • It improves readability, modularizes complex queries, and supports recursion.
+
+2. Syntax  
+   WITH cte_name AS (  
+       SELECT ...  
+   )  
+   SELECT * FROM cte_name;
+
+   • You can define multiple CTEs separated by commas:
+     WITH cte1 AS (SELECT ...),  
+          cte2 AS (SELECT ... FROM cte1)  
+     SELECT * FROM cte2;
+
+3. Example – Basic CTE  
+   WITH dept_avg AS (  
+       SELECT department_id, AVG(salary) AS avg_salary  
+       FROM employees  
+       GROUP BY department_id  
+   )  
+   SELECT e.name, e.salary, d.avg_salary  
+   FROM employees e  
+   JOIN dept_avg d ON e.department_id = d.department_id;
+
+4. Benefits  
+   • Improves query clarity by breaking complex logic into parts.  
+   • Avoids repeating subqueries.  
+   • Can be referenced multiple times within the main query.  
+   • Replaces views for temporary operations.
+
+5. Recursive CTE  
+   • A CTE that calls itself to return hierarchical or sequential data.
+
+   Syntax:  
+   WITH RECURSIVE cte_name AS (  
+       -- Anchor member  
+       SELECT ...  
+       UNION ALL  
+       -- Recursive member  
+       SELECT ... FROM cte_name WHERE condition  
+   )  
+   SELECT * FROM cte_name;
+
+   Example – Numbers 1 to 5:  
+   WITH RECURSIVE numbers AS (  
+       SELECT 1 AS n  
+       UNION ALL  
+       SELECT n + 1 FROM numbers WHERE n < 5  
+   )  
+   SELECT * FROM numbers;
+
+6. CTE vs Subquery  
+   | Feature            | CTE                        | Subquery                    |  
+   |--------------------|-----------------------------|------------------------------|  
+   | Readability        | More readable               | Can be nested & confusing    |  
+   | Reusability        | Can reference multiple times| Must repeat for reuse        |  
+   | Recursion support  | Yes                         | No                           |  
+   | Temporary storage  | Yes                         | Yes                          |  
+
+7. Notes  
+   • CTE only exists during execution of the query.  
+   • ORDER BY inside a CTE does not affect final results unless combined with TOP, OFFSET, or used in final SELECT.  
+   • Recursive CTEs must include a termination condition to avoid infinite loops.  
+
 
