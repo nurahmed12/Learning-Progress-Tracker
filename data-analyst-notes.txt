@@ -2902,4 +2902,168 @@ Common Table Expressions (CTEs)
    • ORDER BY inside a CTE does not affect final results unless combined with TOP, OFFSET, or used in final SELECT.  
    • Recursive CTEs must include a termination condition to avoid infinite loops.  
 
+Case Statements, Aliases, Comments in SQL
+
+────────────────────────────────────────────
+1. CASE Statements  
+   • Allows conditional logic within queries.  
+   • Works like IF…ELSE in programming.
+
+   Syntax:
+   CASE  
+       WHEN condition1 THEN result1  
+       WHEN condition2 THEN result2  
+       ...  
+       ELSE resultN  
+   END
+
+   Example:
+   SELECT name, salary,  
+          CASE  
+              WHEN salary > 70000 THEN 'High'  
+              WHEN salary BETWEEN 40000 AND 70000 THEN 'Medium'  
+              ELSE 'Low'  
+          END AS salary_category  
+   FROM employees;
+
+   Notes:  
+   - You can use CASE in SELECT, WHERE, ORDER BY, etc.  
+   - Always include an `ELSE` to cover unmatched cases (optional but recommended).
+
+────────────────────────────────────────────
+2. Aliases  
+   • Used to rename columns or tables for better readability.  
+   • Improves clarity in joins, aggregations, and nested queries.
+
+   Syntax:
+   SELECT column_name AS alias_name  
+   FROM table_name AS alias_name;
+
+   Examples:
+   SELECT name AS employee_name, salary * 12 AS annual_salary  
+   FROM employees;
+
+   SELECT e.name, d.name  
+   FROM employees AS e  
+   JOIN departments AS d ON e.department_id = d.id;
+
+   Notes:  
+   - `AS` keyword is optional in many SQL dialects.  
+   - Table aliases are especially helpful in JOINs or subqueries.
+
+────────────────────────────────────────────
+3. Comments in SQL  
+   • Used to explain code or disable parts of queries temporarily.  
+   • Two types of comments:
+
+   Single-line comment:
+   -- This is a single-line comment
+
+   Multi-line comment (not supported in all SQL engines like MySQL):
+   /*  
+      This is a  
+      multi-line comment  
+   */
+
+   Example:
+   SELECT name, salary  -- retrieving employee name and salary  
+   FROM employees;
+
+   Notes:  
+   - Use comments to make complex queries easier to understand.  
+   - In production, remove or minimize comments for performance in some systems.
+
+────────────────────────────────────────────
+Summary:
+| Feature       | Purpose                                   |
+|---------------|-------------------------------------------|
+| CASE          | Apply conditional logic in queries        |
+| Aliases       | Rename columns/tables for clarity         |
+| Comments      | Explain or disable parts of SQL code      |
+
+
+Transactions & Basic Optimization in SQL
+
+────────────────────────────────────────────
+1. Transactions  
+• A transaction is a sequence of one or more SQL operations treated as a single logical unit of work.
+• Ensures data integrity using **ACID** properties.
+
+ACID Properties:
+  - **Atomicity**: All steps succeed or none at all.
+  - **Consistency**: Keeps the database in a valid state.
+  - **Isolation**: Transactions don’t interfere with each other.
+  - **Durability**: Once committed, changes are permanent.
+
+Basic Transaction Commands:
+  - `BEGIN` / `START TRANSACTION` – Starts a new transaction.
+  - `COMMIT` – Saves all changes.
+  - `ROLLBACK` – Undoes changes since the last BEGIN.
+  - `SAVEPOINT` – Sets a point you can roll back to.
+  - `ROLLBACK TO SAVEPOINT` – Rolls back to a specific point.
+
+Example:
+BEGIN;
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+COMMIT;
+
+If an error occurs, you can use ROLLBACK; to undo all changes.
+
+Use Cases:
+- Bank transfers
+- Batch updates
+- Ensuring data consistency in multi-step operations
+
+────────────────────────────────────────────
+2. Basic SQL Optimization  
+• Optimization improves the performance and efficiency of queries.
+
+Tips:
+
+✅ Use SELECT only needed columns  
+-- Bad  
+SELECT * FROM employees;  
+-- Good  
+SELECT name, salary FROM employees;
+
+✅ Use WHERE clauses to reduce scanned rows  
+SELECT * FROM orders WHERE status = 'shipped';
+
+✅ Use appropriate indexes  
+- Create indexes on columns used in JOIN, WHERE, and ORDER BY.
+
+✅ Avoid functions on indexed columns in WHERE  
+-- Slower  
+WHERE YEAR(order_date) = 2023  
+-- Faster  
+WHERE order_date >= '2023-01-01' AND order_date < '2024-01-01'
+
+✅ Avoid SELECT DISTINCT if not needed  
+- DISTINCT is expensive. Only use it when necessary.
+
+✅ Limit rows returned  
+SELECT * FROM products LIMIT 10;
+
+✅ Use EXISTS instead of IN for subqueries with large datasets  
+-- Better  
+SELECT name FROM customers c  
+WHERE EXISTS (  
+   SELECT 1 FROM orders o WHERE o.customer_id = c.id  
+);
+
+✅ Analyze execution plans  
+- Use EXPLAIN or QUERY PLAN tools to see how queries are executed.
+
+────────────────────────────────────────────
+Summary Table:
+
+| Concept        | Description                                 |
+|----------------|---------------------------------------------|
+| Transactions   | Group SQL operations into a single unit     |
+| COMMIT         | Finalizes changes made in transaction       |
+| ROLLBACK       | Reverts changes made during transaction     |
+| SAVEPOINT      | Creates rollback checkpoints                |
+| Optimization   | Improves query performance and efficiency   |
+| EXPLAIN PLAN   | Visualizes how queries are executed         |
 

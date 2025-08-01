@@ -48,8 +48,8 @@
     "Window Functions: ROW_NUMBER, RANK, DENSE_RANK, LEAD, LAG": true,
     "Subqueries: Correlated & Non-correlated": true,
     "Common Table Expressions (CTEs)": true,
-    "Case Statements, Aliases, Comments": false,
-    "Transactions & Basic Optimization": false
+    "Case Statements, Aliases, Comments": true,
+    "Transactions & Basic Optimization": true
   },
   "Stage 3: Python & Libraries (Weeks 5\u20138)": {
     "Python Basics: Variables, Data Types, Control Flow, Functions": false,

@@ -51,8 +51,8 @@
 - 🟢 Window Functions: ROW_NUMBER, RANK, DENSE_RANK, LEAD, LAG  
 - 🟢 Subqueries: Correlated & Non-correlated  
 - 🟢 Common Table Expressions (CTEs)   
-- ⚪️ Case Statements, Aliases, Comments  
-- ⚪️ Transactions & Basic Optimization  
+- 🟢 Case Statements, Aliases, Comments  
+- 🟢 Transactions & Basic Optimization  
 
 ## Stage 3: Python & Libraries (Weeks 5–8)
 - ⚪️ Python Basics: Variables, Data Types, Control Flow, Functions  
