@@ -3167,3 +3167,104 @@ Index – Detailed SQL Note (Including Storage & Organization Types)
 | Filtered/Partial        | Index on subset of rows via filter predicate                  |
 | Function-Based/Expr     | Index on an expression or function result                     |
 
+Performance & Optimization for Data Analysts – Indexing & Partitioning
+
+1. Why It Matters  
+   • Faster dashboards, reports, and ad-hoc queries—no more waiting minutes for results.  
+   • Reduces server load and storage I/O, so more colleagues can run queries simultaneously.  
+   • Enables handling of ever-growing data sets without starting from scratch.
+
+────────────────────────────────────────────  
+2. Indexing: Your Query “Shortcut”  
+
+A. What Is an Index?  
+   • Think of it like the back of a book—Excel doesn’t scan every row; it jumps to only relevant ones.  
+   • Under the hood: B-Tree (rowstore) or compressed column segments (columnstore).
+
+B. When to Use Rowstore (B-Tree) Indexes  
+   • Point lookups and small ranges:  
+     SQL: `WHERE customer_id = 123` or `sale_date BETWEEN '2025-01-01' AND '2025-01-31'`  
+   • JOIN keys, foreign keys, GROUP BY and ORDER BY columns.  
+   • Good default for OLTP and smaller fact tables.
+
+C. When to Use Columnstore Indexes  
+   • Scanning millions of rows for aggregates (SUM, AVG) across few columns.  
+   • Data warehouse style queries: “Total sales by region per quarter.”  
+   • Highly compressed—can reduce storage by 5–10× and run vectorized scans.
+
+D. Designing Effective Indexes  
+   1. **Selectivity**: index columns with many unique values first (e.g. transaction_id).  
+   2. **Composite Index Order**: put the filter column most often used first:  
+      - If you filter on `product_category` then `sale_date`, define `(product_category, sale_date)`.  
+   3. **Covering Index**: add extra columns via INCLUDE (SQL Server) or INCLUDE clause (PostgreSQL) so your query never needs to “lookup” back to the table.  
+   4. **Filtered/Partial Index**: index only rows you care about (e.g. `WHERE is_active = true`) to keep index small and fast.
+
+E. Maintenance & Monitoring  
+   • **Fragmentation**: monitor with DMVs or system views—rebuild when >30% fragmented.  
+   • **Statistics**: auto-update on, but refresh manually after big loads (`ANALYZE`, `UPDATE STATISTICS`).  
+   • **Usage Metrics**: identify unused indexes (`sys.dm_db_index_usage_stats`, `pg_stat_user_indexes`) and drop them to speed up writes.
+
+────────────────────────────────────────────  
+3. Partitioning: Splitting Big Tables into “Chunks”  
+
+A. Why Partition?  
+   • **Pruning**: queries with filters on the partition key (e.g. date) skip entire chunks—massive I/O savings.  
+   • **Maintenance**: you can archive, rebuild, or delete old partitions (e.g. last year’s data) without touching current data.  
+   • **Parallelism**: some engines scan different partitions on different CPU threads.
+
+B. Common Partitioning Schemes  
+   1. **Range**: ideal for dates—e.g. one partition per month or quarter.  
+   2. **List**: for categorical splits—e.g. one partition per region (“North”, “South”, etc.).  
+   3. **Hash**: distributes evenly when you can’t segment by date or list (e.g. user_id hash).  
+   4. **Composite**: range + hash for high-volume date partitions that need sub-distribution.
+
+C. Implementing Partitions (Conceptual)  
+   • SQL Server: create a PARTITION FUNCTION (defines ranges) and a PARTITION SCHEME (maps to filegroups), then `CREATE TABLE … ON scheme`.  
+   • Oracle/PostgreSQL/MySQL: use `PARTITION BY` clauses directly in `CREATE TABLE`.  
+
+D. Partitioned Indexes  
+   • **Local Index**: each partition has its own index—prunes together with the table.  
+   • **Global Index**: a single index across all partitions—needed if you query on non-partition columns, but cannot prune as efficiently.
+
+E. Managing Partitions  
+   • **SPLIT / MERGE**: adjust boundaries—add new months or retire old ones.  
+   • **SWITCH / EXCHANGE**: swap a data table in/out for fast archiving.  
+   • **TRUNCATE PARTITION**: delete old data instantly (no logging).  
+   • **Stats per Partition**: ensure the optimizer knows row counts per partition for accurate plans.
+
+────────────────────────────────────────────  
+4. Putting It Together—A Data Analyst’s Checklist  
+   1. **Analyze Your Workload**  
+      – Use `EXPLAIN`/`EXPLAIN ANALYZE` to see table scans vs. index seeks.  
+      – Profile slow queries in your BI tool or database logs.  
+   2. **Design Indexes**  
+      – Start with columns in WHERE, JOIN, GROUP BY, ORDER BY.  
+      – Build rowstore B-Trees for selective filters; add columnstore for heavy aggregates.  
+   3. **Partition Large Tables**  
+      – If your fact table exceeds tens of millions of rows, partition by date or region.  
+      – Test “partition pruning” by filtering on the key—ensure only relevant partitions are scanned.  
+   4. **Monitor & Maintain**  
+      – Schedule index rebuilds/reorganizes and statistics updates during off-peak hours.  
+      – Drop or disable unused indexes to speed up inserts/updates.  
+      – Adjust fill factors to balance page density vs. updates.  
+   5. **Iterate**  
+      – Re-examine plans after major data volume changes (e.g. year-end loads).  
+      – Archive old partitions and merge low-value ones to keep management overhead low.  
+
+────────────────────────────────────────────  
+5. Quick Reference Table  
+
+| Technique                | Use Case                                    | Benefit                          |  
+|--------------------------|---------------------------------------------|-----------------------------------|  
+| Single-Column B-Tree     | Point lookups, small ranges                 | Fast seeks, low overhead         |  
+| Composite B-Tree         | Multi-condition filters                     | Covers multiple filters          |  
+| Covering Index           | Avoid table lookups                         | Query entirely from index        |  
+| Columnstore              | Large-scan aggregates                       | High compression, vector speed   |  
+| Filtered/Partial Index   | Sparse or selective rows                    | Smaller index, faster seeks      |  
+| Range Partitioning       | Time-series data                            | Pruning, easy archiving          |  
+| List Partitioning        | Categorical splits                          | Pruning by category              |  
+| Hash Partitioning        | Uniform distribution (no natural key)       | Balanced I/O                     |  
+| Local vs. Global Index   | Align with partitions vs. cross-partition   | Pruning vs. flexibility          |  
+
+Keep this cheat-sheet at your desk—index and partition your way to lightning-fast SQL!  
+
