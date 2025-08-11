@@ -3329,5 +3329,148 @@ E. Pitfalls to Avoid
 | Local vs. Global Index      | Align with partition vs. cross-partition   | Pruning vs. flexible queries          |
 
  
+Python Basics – Variables, Data Types, Control Flow, Functions
+
+1. Variables  
+   • Definition: A named reference to a value stored in memory.  
+   • No explicit type declaration; Python determines type dynamically.  
+   • Naming Rules:  
+     – Can include letters, numbers, underscores (_), but cannot start with a number.  
+     – Case-sensitive (myVar ≠ myvar).  
+     – Avoid Python keywords (e.g., if, for, class).  
+   • Assignment:  
+     ```python
+     x = 5
+     name = "Alice"
+     price = 19.99
+     ```  
+   • Multiple Assignment:  
+     ```python
+     a, b, c = 1, 2, 3
+     ```  
+   • Swap Values:  
+     ```python
+     x, y = y, x
+     ```
+
+────────────────────────────────────────────  
+2. Data Types  
+   A. Numeric  
+     – int: Whole numbers (`10`, `-3`)  
+     – float: Decimal numbers (`3.14`, `-2.5`)  
+     – complex: Complex numbers (`3+4j`)  
+
+   B. Sequence Types  
+     – str: Text data (`"hello"`)  
+     – list: Ordered, mutable (`[1, 2, 3]`)  
+     – tuple: Ordered, immutable (`(1, 2, 3)`)  
+     – range: Sequence of numbers (`range(0, 10)`)  
+
+   C. Mapping Type  
+     – dict: Key-value pairs (`{"name": "Alice", "age": 25}`)  
+
+   D. Set Types  
+     – set: Unordered, unique elements (`{1, 2, 3}`)  
+     – frozenset: Immutable set  
+
+   E. Boolean  
+     – bool: True or False (`True`, `False`)  
+
+   F. NoneType  
+     – None: Represents no value or null (`None`)  
+
+   • Type Checking & Conversion:  
+     ```python
+     type(x)        # Check type
+     int("5")       # Convert to int
+     str(10)        # Convert to string
+     list("abc")    # Convert to list
+     ```
+
+────────────────────────────────────────────  
+3. Control Flow  
+   A. Conditional Statements  
+     ```python
+     if condition:
+         # code
+     elif other_condition:
+         # code
+     else:
+         # code
+     ```
+
+   B. Comparison Operators  
+     – `==` equal, `!=` not equal  
+     – `<`, `>`, `<=`, `>=`  
+
+   C. Logical Operators  
+     – `and`: True if both conditions are True  
+     – `or`: True if at least one condition is True  
+     – `not`: Negates a condition  
+
+   D. Loops  
+     1. for loop (iterates over sequences)  
+        ```python
+        for item in [1, 2, 3]:
+            print(item)
+        ```
+     2. while loop (runs while condition is True)  
+        ```python
+        count = 0
+        while count < 5:
+            print(count)
+            count += 1
+        ```
+     3. Loop control:  
+        – `break`: exit loop early  
+        – `continue`: skip current iteration  
+        – `pass`: do nothing, placeholder
+
+────────────────────────────────────────────  
+4. Functions  
+   • Definition: A block of reusable code executed when called.  
+   • Syntax:  
+     ```python
+     def greet(name):
+         return f"Hello, {name}"
+     ```
+   • Parameters & Arguments:  
+     – Positional arguments: matched by order.  
+     – Keyword arguments: matched by name (`greet(name="Alice")`).  
+     – Default values:  
+       ```python
+       def greet(name="Guest"):
+           print("Hello", name)
+       ```
+     – Variable arguments:  
+       ```python
+       def func(*args, **kwargs):
+           print(args)     # tuple of positional args
+           print(kwargs)   # dict of keyword args
+       ```
+
+   • Scope:  
+     – Local variables: exist only inside function.  
+     – Global variables: exist outside, accessible with `global` keyword.  
+
+   • Lambda (Anonymous Functions):  
+     ```python
+     square = lambda x: x**2
+     ```
+
+   • Docstrings (Documentation Strings):  
+     ```python
+     def add(a, b):
+         """Return the sum of a and b."""
+         return a + b
+     ```
+
+────────────────────────────────────────────  
+5. Best Practices for Beginners  
+   • Use descriptive variable names (`total_price` instead of `tp`).  
+   • Keep functions small and focused on one task.  
+   • Comment complex logic.  
+   • Avoid using global variables unless necessary.  
+   • Test your code with simple examples before scaling up.
 
 
