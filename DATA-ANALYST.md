@@ -55,7 +55,7 @@
 - 🟢 Transactions & Basic Optimization  
 
 ## Stage 3: Python & Libraries (Weeks 5–8)
-- ⚪️ Python Basics: Variables, Data Types, Control Flow, Functions  
+- 🟢 Python Basics: Variables, Data Types, Control Flow, Functions  
 - ⚪️ Data Structures: Lists, Tuples, Dictionaries, Sets  
 - ⚪️ Comprehensions: List, Dict, Set Comprehensions  
 - ⚪️ Pandas: DataFrame & Series Creation, Indexing, Selection  
