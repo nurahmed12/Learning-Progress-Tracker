@@ -53,7 +53,7 @@
   },
   "Stage 3: Python & Libraries (Weeks 5\u20138)": {
     "Python Basics: Variables, Data Types, Control Flow, Functions": true,
-    "Data Structures: Lists, Tuples, Dictionaries, Sets": false,
+    "Data Structures: Lists, Tuples, Dictionaries, Sets": true,
     "Comprehensions: List, Dict, Set Comprehensions": false,
     "Pandas: DataFrame & Series Creation, Indexing, Selection": false,
     "Data Cleaning: dropna, fillna, astype, duplicate handling": false,
